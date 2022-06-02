@@ -1,0 +1,37 @@
+//Font
+$bold: 600;
+$semibold: 500;
+$regular: 400;
+$font-primary: "Montserrat", sans-serif;
+
+//Font-size
+$small-size: 1.2rem;
+$medium-size: 1.4rem;
+$regular-size: 1.6rem;
+
+//Colors
+$accent: #52a9e1;
+$greyo: #50565d;
+$greyo-end: #3d454c;
+$black: #000011;
+
+//Larges
+$large: 100%;
+$medium: 48%;
+$small: 31%;
+$maxwidth-containner: 1440px;
+$maxwidth-inner-containner: 1280px;
+
+//Breakpoints
+$mobile-low: 320px !default;
+$mobile: 475px !default;
+$tablet: 769px !default;
+$tablet-landscape: 1024px !default;
+$desktop: 1280px !default;
+
+//RYTHMS
+$global-padding: 0 1.6rem;
+$global-padding-mobile: 0 1.6rem;
+
+//Box
+$radius: 0.4rem;

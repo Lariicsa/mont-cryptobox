@@ -1,0 +1,106 @@
+html {
+  box-sizing: border-box;
+  font-family: $font-primary;
+  font-size: 62.5%;
+  height: 100%;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
+  font-size: $regular-size;
+  color: $black;
+}
+
+.space {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  min-height: 100vh;
+  flex-wrap: wrap;
+  z-index: 0;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  padding: $global-padding;
+  width: 100%;
+  max-width: $maxwidth-containner;
+  flex-wrap: wrap;
+
+  //Sections
+  &-in {
+    @extend .container;
+    width: 100%;
+    max-width: $maxwidth-inner-containner;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  position: relative;
+  overflow-wrap: break-word;
+
+  &.center {
+    justify-content: center;
+  }
+
+  &.between {
+    justify-content: space-between;
+  }
+
+  &.right {
+    justify-content: flex-end;
+  }
+
+  &.md {
+    width: 48%;
+  }
+  &.sm {
+    width: 32%;
+  }
+  &.xcenter {
+    align-items: center;
+  }
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  min-height: auto;
+  width: 100%;
+  overflow-wrap: break-word;
+
+  &.center {
+    justify-content: center;
+  }
+
+  &.bottom {
+    justify-content: flex-end;
+  }
+
+  &.md {
+    width: 48%;
+  }
+  &.sm {
+    width: 32.666%;
+  }
+}
+
+[v-cloak] {
+  display: none;
+}
