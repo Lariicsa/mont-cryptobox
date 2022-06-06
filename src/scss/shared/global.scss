@@ -16,10 +16,11 @@ body {
 * {
   box-sizing: border-box;
   font-size: $regular-size;
-  color: $black;
+  color: $white-neutral;
 }
 
 .space {
+  background-color: $black;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -37,10 +38,9 @@ body {
   width: 100%;
   max-width: $maxwidth-containner;
   flex-wrap: wrap;
-
-  //Sections
-  &-in {
+  &__main {
     @extend .container;
+    border: 0.1rem dashed $white-neutral;
     width: 100%;
     max-width: $maxwidth-inner-containner;
   }
