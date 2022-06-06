@@ -1,0 +1,12 @@
+.header {
+  &__logo {
+    @include icon-logo;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 11.4rem;
+    height: 3.2rem;
+  }
+}

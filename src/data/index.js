@@ -1,0 +1,19 @@
+export default {
+  topNavigation: [
+    {
+      id: "01",
+      pathName: "bitcoin",
+      value: "¿Qué es Bitcoin?",
+    },
+    {
+      id: "02",
+      pathName: "cajeros",
+      value: "Ubica un cajero",
+    },
+    {
+      id: "03",
+      pathName: "bitcoin",
+      value: "1 BTC: 578,638.68 MXN",
+    },
+  ],
+};
