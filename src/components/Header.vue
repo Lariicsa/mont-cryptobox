@@ -2,7 +2,11 @@
 <template>
   <div class="row between xcenter">
     <a href="/" class="header__logo"></a>
-    <Navigation :itemsList="itemsList" />
+    <div class="header__burger" @click="burgerClick"></div>
+    <Navigation v-show="isMenuOpen" :itemsList="itemsList" />
+    <div class="header__navigation">
+      <Navigation :itemsList="itemsList" />
+    </div>
   </div>
 </template>
 <script>
@@ -25,6 +29,17 @@ export default {
     hasSubmenues: {
       type: Boolean,
       default: false,
+    },
+  },
+
+  data() {
+    return {
+      isMenuOpen: false,
+    };
+  },
+  methods: {
+    burgerClick() {
+      this.isMenuOpen = !this.isMenuOpen;
     },
   },
 };

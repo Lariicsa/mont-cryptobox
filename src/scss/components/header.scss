@@ -9,4 +9,21 @@
     width: 11.4rem;
     height: 3.2rem;
   }
+
+  &__burger {
+    display: none;
+    background-repeat: no-repeat;
+    @include icon("burger", $white-neutral);
+    width: 2.8rem;
+    height: 2.8rem;
+    @include mobile {
+      display: flex;
+    }
+  }
+  &__navigation {
+    display: flex;
+    @include mobile{
+      display: none;
+    }
+  }
 }
