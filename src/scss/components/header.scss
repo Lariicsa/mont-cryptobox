@@ -1,4 +1,5 @@
 .header {
+  padding: 2.4rem 0;
   &__logo {
     @include icon-logo;
     background-repeat: no-repeat;
@@ -22,7 +23,7 @@
   }
   &__navigation {
     display: flex;
-    @include mobile{
+    @include mobile {
       display: none;
     }
   }

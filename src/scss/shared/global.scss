@@ -34,15 +34,18 @@ body {
 .container {
   display: flex;
   justify-content: center;
-  padding: $global-padding;
+  padding: 0;
   width: 100%;
-  max-width: $maxwidth-containner;
+  min-width: 32rem;
   flex-wrap: wrap;
   &__main {
     @extend .container;
+    width: 94%;
+  }
+  &__inner {
+    @extend .container;
     border: 0.1rem dashed $white-neutral;
-    width: 100%;
-    max-width: $maxwidth-inner-containner;
+    max-width: $maxwidth-containner;
   }
 }
 

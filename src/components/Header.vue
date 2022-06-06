@@ -1,6 +1,6 @@
 
 <template>
-  <div class="row between xcenter">
+  <div class="header row between xcenter">
     <a href="/" class="header__logo"></a>
     <div class="header__burger" @click="burgerClick"></div>
     <Navigation v-show="isMenuOpen" :itemsList="itemsList" />
