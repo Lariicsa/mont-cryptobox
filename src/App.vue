@@ -3,7 +3,7 @@
     <Header :itemsList="topMenuList" />
     <div class="container__inner">
       <HeroImage :title="heroImageData.title" :text="heroImageData.text" />
-      <div class="row between">
+      <Grid>
         <Icontext
           v-for="item in icons"
           :title="item.title"
@@ -11,12 +11,13 @@
           :icon="item.icon"
           :key="item.title"
         />
-      </div>
+      </Grid>
     </div>
   </div>
 </template>
 
 <script>
+import Grid from "@/components/Grid.vue";
 import Header from "@/components/Header.vue";
 import HeroImage from "@/components/HeroImage.vue";
 import Icontext from "@/components/IconText.vue";
@@ -24,6 +25,7 @@ import DATA from "./data";
 export default {
   name: "App",
   components: {
+    Grid,
     Header,
     HeroImage,
     Icontext,
@@ -40,3 +42,14 @@ export default {
   computed: {},
 };
 </script>
+<style lang="scss">
+  .grid__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    position: relative;
+    justify-items: stretch;
+    grid-column-gap: 0.8rem;
+    grid-row-gap: 0.8rem;
+    height: auto;
+  }
+</style>
