@@ -16,4 +16,10 @@ export default {
       value: "1 BTC: 578,638.68 MXN",
     },
   ],
+
+  heroImage:{
+    title: `¡Cambia bitcoins por dinero!`,
+    text: `Cryptobox es una red de cajeros automáticos de intercambio de bitcoins.<br/>
+    ¡Imposible hacerlo más fáci`
+  }
 };
