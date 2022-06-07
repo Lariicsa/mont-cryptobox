@@ -1,10 +1,10 @@
 <template>
   <div class="footer">
-    <Grid columns="repeat(3, 1fr)">
+    <Grid columns="24% 48% 24%">
       <div class="footer__logo"></div>
       <ul class="footer__list">
-        <li class="footer__item" v-for="item in items" :key="item.id">
-          {{ item.name }}
+        <li v-for="item in items" :key="item.id">
+          <a class="footer__item" :href="item.link"> {{ item.name }}</a>
         </li>
       </ul>
       <ul class="footer__social">
@@ -12,7 +12,9 @@
           :class="`footer__net ${net.name}`"
           v-for="net in social"
           :key="net.id"
-        ></li>
+        >
+          <a :href="net.link"></a>
+        </li>
       </ul>
     </Grid>
   </div>

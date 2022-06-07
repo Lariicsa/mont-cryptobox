@@ -47,14 +47,3 @@ export default {
   computed: {},
 };
 </script>
-<style lang="scss">
-  .grid__container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    position: relative;
-    justify-items: stretch;
-    grid-column-gap: 0.8rem;
-    grid-row-gap: 0.8rem;
-    height: auto;
-  }
-</style>

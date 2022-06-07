@@ -51,28 +51,34 @@ export default {
       {
         id: "cryp01",
         name: "Rayyo",
+        link: "#",
       },
       {
         id: "cryp02",
         name: "Montebit",
+        link: "#",
       },
       {
         id: "cryp03",
         name: "Aviso de privacidad",
+        link: "#",
       },
     ],
     social: [
       {
         id: "net01",
         name: "youtube",
+        link: "#",
       },
       {
         id: "net02",
         name: "twitter",
+        link: "#",
       },
       {
         id: "net03",
         name: "facebook",
+        link: "#",
       },
     ],
   },
