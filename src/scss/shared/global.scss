@@ -19,6 +19,27 @@ body {
   color: $white-neutral;
 }
 
+h1,
+h2,
+h3 {
+  font-weight: $bold;
+  margin: 0.8rem 0;
+}
+
+h1 {
+  font-size: $big-title-size;
+  line-height: $big-title-size + $global-rythm;
+}
+
+h2 {
+  font-size: $regular-title-size;
+  line-height: $regular-title-size + $global-rythm;
+}
+h3 {
+  font-size: $small-title-size;
+  line-height: $small-title-size + $global-rythm;
+}
+
 .space {
   background-color: $black;
   display: flex;

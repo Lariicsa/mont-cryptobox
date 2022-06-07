@@ -6,9 +6,12 @@ $regular: 400;
 $font-primary: "Plus Jakarta Sans", sans-serif;
 
 //Font-size
-$small-size: 1.2rem;
-$medium-size: 1.4rem;
-$regular-size: 1.6rem;
+$small-size: 1.4rem;
+$medium-size: 1.6rem;
+$regular-size: 1.8rem;
+$big-title-size: 6.4rem;
+$regular-title-size: 4rem;
+$small-title-size: 2.8rem;
 
 //Colors
 $sunglow: #ffc835;
@@ -31,6 +34,7 @@ $tablet-landscape: 1024px !default;
 $desktop: 1280px !default;
 
 //RYTHMS
+$global-rythm: 0.8rem;
 $global-padding: 0 1.6rem;
 $global-padding-mobile: 0 1.6rem;
 

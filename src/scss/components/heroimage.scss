@@ -1,21 +1,50 @@
-.heroimage{
+.heroimage {
   display: flex;
-  height: 30rem;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 64rem;
   width: 100%;
 
-  &__text{
-
+  @include until($tablet-landscape) {
+    flex-direction: column;
   }
-  &__image{
-    
+
+  &__content {
+    align-items: center;
+    width: 64%;
+    max-width: 54rem;
+  }
+
+  &__text {
+    font-size: $regular-size;
+    line-height: $regular-size + $global-rythm;
+    font-weight: $regular;
+  }
+  &__image {
+    background-image: url("/public/heroimage-right.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+    width: 33%;
+    height: 100%;
+    @include until($tablet-landscape) {
+      background-position: center;
+      background-size: contain;
+      min-height: 54rem;
+    }
+  }
+  &__content,
+  &__image {
+    @include until($tablet-landscape) {
+      width: 100%;
+    }
   }
 }
 
-canvas {  
+canvas {
   position: absolute;
-  top: 24%; 
+  top: 24%;
   right: 50%;
-  margin: -24.5rem -45rem auto auto; 
+  margin: -24.5rem -45rem auto auto;
   max-width: 100%;
   height: auto;
 }

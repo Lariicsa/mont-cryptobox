@@ -17,9 +17,9 @@ export default {
     },
   ],
 
-  heroImage:{
+  heroImage: {
     title: `¡Cambia bitcoins por dinero!`,
     text: `Cryptobox es una red de cajeros automáticos de intercambio de bitcoins.<br/>
-    ¡Imposible hacerlo más fáci`
-  }
+    ¡Imposible hacerlo más fácil`,
+  },
 };
