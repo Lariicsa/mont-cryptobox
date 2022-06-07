@@ -12,11 +12,13 @@
           :key="item.title"
         />
       </Grid>
+      <Footer logo="" :items="footerItems" :social="footerSocial" />
     </div>
   </div>
 </template>
 
 <script>
+import Footer from "@/components/Footer.vue";
 import Grid from "@/components/Grid.vue";
 import Header from "@/components/Header.vue";
 import HeroImage from "@/components/HeroImage.vue";
@@ -25,6 +27,7 @@ import DATA from "./data";
 export default {
   name: "App",
   components: {
+    Footer,
     Grid,
     Header,
     HeroImage,
@@ -36,6 +39,8 @@ export default {
       topMenuList: DATA.topNavigation,
       heroImageData: DATA.heroImage,
       icons: DATA.iconText,
+      footerItems: DATA.footer.items,
+      footerSocial: DATA.footer.social,
     };
   },
 

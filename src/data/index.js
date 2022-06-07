@@ -45,4 +45,35 @@ export default {
       icon: "upload",
     },
   ],
+
+  footer: {
+    items: [
+      {
+        id: "cryp01",
+        name: "Rayyo",
+      },
+      {
+        id: "cryp02",
+        name: "Montebit",
+      },
+      {
+        id: "cryp03",
+        name: "Aviso de privacidad",
+      },
+    ],
+    social: [
+      {
+        id: "net01",
+        name: "youtube",
+      },
+      {
+        id: "net02",
+        name: "twitter",
+      },
+      {
+        id: "net03",
+        name: "facebook",
+      },
+    ],
+  },
 };
