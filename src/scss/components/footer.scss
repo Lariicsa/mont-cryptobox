@@ -34,6 +34,11 @@
     text-transform: uppercase;
     width: auto;
     text-decoration: none;
+    &:hover {
+      @include from($tablet-landscape) {
+        color: $sunglow;
+      }
+    }
   }
 
   &__social {
@@ -54,5 +59,10 @@
     display: flex;
     height: 1.8rem;
     width: 2.2rem;
+    &:hover {
+      @include from($tablet-landscape) {
+        @include icon("youtube", $sunglow);
+      }
+    }
   }
 }
