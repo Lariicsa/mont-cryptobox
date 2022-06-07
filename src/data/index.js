@@ -22,4 +22,27 @@ export default {
     text: `Cryptobox es una red de cajeros automáticos de intercambio de bitcoins.<br/>
     ¡Imposible hacerlo más fácil`,
   },
+
+  iconText: [
+    {
+      title: "Ingresa",
+      text: "Egestas sagittis ipsum habitant at diam.",
+      icon: "upload",
+    },
+    {
+      title: "Ingresa",
+      text: "Egestas sagittis ipsum habitant at diam.",
+      icon: "upload",
+    },
+    {
+      title: "Ingresa",
+      text: "Egestas sagittis ipsum habitant at diam.",
+      icon: "upload",
+    },
+    {
+      title: "Ingresa",
+      text: "Egestas sagittis ipsum habitant at diam.",
+      icon: "upload",
+    },
+  ],
 };
