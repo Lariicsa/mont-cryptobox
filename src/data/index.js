@@ -10,11 +10,6 @@ export default {
       pathName: "cajeros",
       value: "Ubica un cajero",
     },
-    {
-      id: "03",
-      pathName: "bitcoin",
-      value: "1 BTC: 578,638.68 MXN",
-    },
   ],
 
   heroImage: {
@@ -22,4 +17,17 @@ export default {
     text: `Cryptobox es una red de cajeros automáticos de intercambio de bitcoins.<br/>
     ¡Imposible hacerlo más fácil`,
   },
+
+  cryptoPrices: [
+    {
+      altcoin: "Bitcoin",
+      value: "bitcoin",
+      price: "78,638.68",
+    },
+    {
+      altcoin: "Litecoin",
+      value: "litecoin",
+      price: "578,638.68",
+    },
+  ],
 };
