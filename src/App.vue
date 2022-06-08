@@ -11,6 +11,7 @@
 import Header from "@/components/Header.vue";
 import HeroImage from "@/components/HeroImage.vue";
 import DATA from "./data";
+
 export default {
   name: "App",
   components: {
@@ -24,7 +25,5 @@ export default {
       heroImageData: DATA.heroImage,
     };
   },
-
-  computed: {},
 };
 </script>

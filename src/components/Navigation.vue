@@ -22,12 +22,26 @@
           </ul>
         </li>
       </ul>
+      <Cryptoprice v-model="currentAltcoin" :salected="priceData[0]" />
     </div>
   </nav>
 </template>
 <script>
+import Cryptoprice from "@/components/Cryptoprice.vue";
+import DATA from "../data";
 export default {
   name: "Navigation",
+
+  components: {
+    Cryptoprice,
+  },
+
+  data() {
+    return {
+      currentAltcoin: "Bitcoin",
+      priceData: DATA.cryptoPrices,
+    };
+  },
 
   props: {
     itemsList: {
