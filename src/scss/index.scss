@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
 
 @import "shared/normalize.scss";
 @import "shared/_vars.scss";
@@ -10,6 +10,9 @@
 //components
 @import "components/cardlist.scss";
 @import "components/cryptoprice.scss";
+@import "components/footer.scss";
+@import "components/grid.scss";
 @import "components/header.scss";
 @import "components/heroimage.scss";
+@import "components/iconimage.scss";
 @import "components/navigation.scss";
