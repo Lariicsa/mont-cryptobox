@@ -1,14 +1,12 @@
 <template>
   <div class="cardlist__wrapper">
-    <ul class="cardlist">
-      <template v-for="coin in altcoins" :key="coin.slug">
-        <div class="cardlist__name">{{ coin.slug }}</div>
-        <div class="cardlist__values">
-          <div class="cardlist__price">{{ coin.priceBuy }}</div>
-          <div class="cardlist__price">{{ coin.priceSell }}</div>
-        </div>
-      </template>
-    </ul>
+    <div class="cardlist" v-for="coin in altcoins" :key="coin.slug">
+      <div class="cardlist__name">{{ coin.slug }}</div>
+      <div class="cardlist__values">
+        <div class="cardlist__price">{{ coin.priceBuy }}</div>
+        <div class="cardlist__price">{{ coin.priceSell }}</div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -23,6 +21,11 @@ export default {
 
   mounted() {
     this.altcoins;
+  },
+  computed: {
+    hasHr() {
+      return this.altcoins.length > 1;
+    },
   },
 };
 </script>
