@@ -21,7 +21,11 @@
             </li>
           </ul>
         </li>
-        <Cryptoprice v-model="currentAltcoin" :salected="priceData[0]" />
+        <Cryptoprice
+          v-model="currentAltcoin"
+          :salected="priceData[0]"
+          @onClick="clickPrice"
+        />
       </ul>
     </div>
   </nav>
@@ -65,6 +69,10 @@ export default {
   methods: {
     actionItem(value) {
       this.$emit("actionItem", value);
+    },
+
+    clickPrice() {
+      this.$emit("clickPrice");
     },
   },
 };

@@ -5,8 +5,8 @@
     <div class="header__burger" @click="burgerClick"></div>
     <Navigation ui="mobile" v-show="isMenuOpen" :itemsList="itemsList" />
     <div class="header__navigation">
-      <Navigation :itemsList="itemsList" />
-      <Cardlist :altcoins="listAlcoins" />
+      <Navigation :itemsList="itemsList" @clickPrice="showPrices" />
+      <Cardlist v-show="showAltcoins" :altcoins="listAlcoins" @onMouseLeave="hidePricesOnBlur" />
     </div>
   </div>
 </template>
@@ -40,12 +40,21 @@ export default {
     return {
       isMenuOpen: false,
       listAlcoins: DATA.listCryptos,
+      showAltcoins: false,
     };
   },
   methods: {
     burgerClick() {
       this.isMenuOpen = !this.isMenuOpen;
     },
+
+    showPrices() {
+      this.showAltcoins = !this.showAltcoins;
+    },
+
+    hidePricesOnBlur(){
+      this.showAltcoins = false
+    }
   },
 };
 </script>

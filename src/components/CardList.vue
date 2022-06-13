@@ -1,5 +1,5 @@
 <template>
-  <div class="cardlist__wrapper">
+  <div class="cardlist__wrapper" @mouseleave="onMouseLeave">
     <div class="cardlist" v-for="coin in altcoins" :key="coin.slug">
       <div class="cardlist__name">{{ coin.slug }}</div>
       <div class="cardlist__values">
@@ -25,6 +25,12 @@ export default {
   computed: {
     hasHr() {
       return this.altcoins.length > 1;
+    },
+  },
+
+  methods: {
+    onMouseLeave() {
+      this.$emit("onMouseLeave");
     },
   },
 };

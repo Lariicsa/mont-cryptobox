@@ -1,5 +1,5 @@
 <template>
-  <div class="cryptoprice__wrapper">
+  <div class="cryptoprice__wrapper" @click="onClick">
     <div class="cryptoprice__selected">1 {{ salected.altcoin }}</div>
     <div class="cryptoprice__quantity">{{ salected.price }} MXN</div>
   </div>
@@ -25,6 +25,9 @@ export default {
     onChange(value) {
       this.$emit("input", parseInt(value));
       this.$emit("onChange");
+    },
+    onClick() {
+      this.$emit("onClick");
     },
   },
 };
