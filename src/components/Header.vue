@@ -3,18 +3,21 @@
   <div class="header row between xcenter">
     <a href="/" class="header__logo"></a>
     <div class="header__burger" @click="burgerClick"></div>
-    <Navigation v-show="isMenuOpen" :itemsList="itemsList" />
+    <Navigation ui="mobile" v-show="isMenuOpen" :itemsList="itemsList" />
     <div class="header__navigation">
       <Navigation :itemsList="itemsList" />
-      
+      <Cardlist :altcoins="listAlcoins" />
     </div>
   </div>
 </template>
 <script>
+import Cardlist from "@/components/CardList.vue";
 import Navigation from "@/components/Navigation.vue";
+import DATA from "../data/index";
 export default {
   name: "Header",
   components: {
+    Cardlist,
     Navigation,
   },
 
@@ -36,6 +39,7 @@ export default {
   data() {
     return {
       isMenuOpen: false,
+      listAlcoins: DATA.listCryptos,
     };
   },
   methods: {

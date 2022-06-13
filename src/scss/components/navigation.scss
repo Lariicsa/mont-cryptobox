@@ -6,9 +6,14 @@
   position: relative;
 
   @include mobile {
-    background-color: $accent;
+    background-color: $neutral-grey;
     flex-direction: column;
+    position: absolute;
+    z-index: 10;
     width: 100%;
+    height: calc(96vh - 8rem);
+    top: 8rem;
+    left: 0;
   }
 
   &__list {
@@ -19,12 +24,6 @@
     align-items: center;
     width: auto;
     list-style-type: none;
-    &.column {
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
-    }
-
     @include mobile {
       flex-direction: column;
       align-items: flex-start;
@@ -32,6 +31,17 @@
       width: auto;
       flex-wrap: wrap;
     }
+
+    &.mobile {
+      flex-direction: column;
+      align-items: center;
+      padding: 2.4rem;
+    }
+  }
+
+  &.mobile {
+    background-color: $neutral-grey;
+    flex-direction: column;
   }
 
   &__out {
@@ -41,6 +51,10 @@
     @include tablet {
       // display: none;
       width: auto;
+    }
+
+    &.mobile {
+      flex-direction: column;
     }
   }
   &__wrapper {
@@ -59,15 +73,18 @@
       &:hover {
         pointer-events: none;
       }
-      .tabs__link {
-        color: $white-neutral;
-      }
+    }
+
+    &.mobile {
+      justify-content: center;
+      width: 100%;
     }
   }
 
   &__item {
     display: flex;
     justify-content: center;
+    align-items: center;
     font-size: $medium-size;
     font-weight: $semibold;
     color: $white-neutral;
@@ -87,6 +104,10 @@
       &:hover {
         pointer-events: none;
       }
+    }
+
+    &.mobile {
+      margin: 2.4rem 0;
     }
   }
 

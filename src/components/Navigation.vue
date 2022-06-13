@@ -1,6 +1,6 @@
 <template>
   <nav :class="'navigation ' + ui">
-    <div class="navigation__out">
+    <div :class="'navigation__out ' + ui">
       <ul :class="'navigation__list ' + ui">
         <li
           :class="'navigation__wrapper ' + ui"
@@ -21,8 +21,8 @@
             </li>
           </ul>
         </li>
+        <Cryptoprice v-model="currentAltcoin" :salected="priceData[0]" />
       </ul>
-      <Cryptoprice v-model="currentAltcoin" :salected="priceData[0]" />
     </div>
   </nav>
 </template>

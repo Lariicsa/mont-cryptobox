@@ -30,4 +30,19 @@ export default {
       price: "578,638.68",
     },
   ],
+
+  listCryptos: [
+    {
+      altcoin: "Bitcoin",
+      slug: "btc",
+      priceBuy: "Compra 78,638.68",
+      priceSell: "Venta 77,638.68",
+    },
+    {
+      altcoin: "Litecoin",
+      slug: "ltc",
+      priceBuy: "Compra 578,638.68",
+      priceSell: "Venta 568,638.68",
+    },
+  ],
 };

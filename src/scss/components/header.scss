@@ -1,5 +1,7 @@
 .header {
   padding: 2.4rem 0;
+  position: relative;
+  z-index: 4;
   &__logo {
     @include icon-logo;
     background-repeat: no-repeat;
@@ -23,6 +25,8 @@
   }
   &__navigation {
     display: flex;
+    position: relative;
+    z-index: 4;
     @include mobile {
       display: none;
     }
