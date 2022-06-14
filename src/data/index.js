@@ -109,15 +109,13 @@ export default {
     {
       namesuc: "Fantástico del valle",
       installation: "13 Diciembre 2018",
-      liminBuy: "Compra $10,000 MXN",
+      limitBuy: "Compra $10,000 MXN",
       limitSell: "Venta $10,000 MXN",
-      altcoins: ["bitcoin", "litecoin"],
-      address: "",
-      horaries: [
-        "martes a jueves: 14:00hrs a 23:00hrs",
-        "domingo y lunes: cerrado",
-        "viernes y sábado: 14:00hrs a 2:00hrs",
-      ],
+      altcoins: "bitcoin",
+      address: "Medellin 191, Col. Roma Norte, CDMX, CP. 06700",
+      horaries: `Martes a Jueves: 14:00hrs a 23:00hrs, <br/>
+      Domingo y Lunes: CERRADO,<br/>
+      Viernes y Sábado: 14:00hrs a 2:00hrs,`,
       mapurl:
         "!1m18!1m12!1m3!1d3763.9607761673537!2d-99.16887974953805!3d19.370850986855274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ffbd6c33266d%3A0xe73f356a90f47ffb!2sFant%C3%A1stico%20Comics!5e0!3m2!1ses-419!2smx!4v1593543335266!5m2!1ses-419!2smx",
     },

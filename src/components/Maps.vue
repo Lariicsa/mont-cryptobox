@@ -1,8 +1,12 @@
 <template>
   <div class="maps__wrapper">
+    <div class="maps__top">
+      <div class="maps__info">{{ mapData.address }}</div>
+      <div class="maps__info" v-html="mapData.horaries"></div>
+    </div>
     <div class="maps">
       <iframe
-        :src="mapData"
+        :src="mapsBasePath + mapData.mapurl"
         width="100%"
         height="100%"
         style="border: 0"
@@ -10,6 +14,14 @@
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
+    </div>
+    <div class="maps__bottom">
+      <div class="maps__head">Fecha de instalación</div>
+      <div class="maps__head">límites</div>
+      <div class="maps__head">criptomonedas</div>
+      <div class="maps__info">{{ mapData.installation }}</div>
+      <div class="maps__info" v-html="pricesInfo"></div>
+      <div class="maps__info">{{ mapData.altcoins }}</div>
     </div>
   </div>
 </template>
@@ -19,8 +31,22 @@ export default {
 
   props: {
     mapData: {
-      type: String,
-      default: "",
+      type: Object,
+    },
+  },
+  data() {
+    return {
+      mapsBasePath: "https://www.google.com/maps/embed?pb=",
+    };
+  },
+
+  mounted() {
+    this.mapData;
+  },
+
+  computed: {
+    pricesInfo() {
+      return `${this.mapData.limitBuy} <br/> ${this.mapData.limitSell}`;
     },
   },
 };

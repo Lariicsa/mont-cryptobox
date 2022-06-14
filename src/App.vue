@@ -12,7 +12,7 @@
           :key="item.title"
         />
       </Grid>
-      <Maps :mapData="mapsBasePath + mapsData" />
+      <Maps :mapData="mapsData" />
       <Footer logo="" :items="footerItems" :social="footerSocial" />
     </div>
   </div>
@@ -45,8 +45,7 @@ export default {
       icons: DATA.iconText,
       footerItems: DATA.footer.items,
       footerSocial: DATA.footer.social,
-      mapsData: DATA.branches[0].mapurl,
-      mapsBasePath: "https://www.google.com/maps/embed?pb=",
+      mapsData: DATA.branches[0],
     };
   },
 };
