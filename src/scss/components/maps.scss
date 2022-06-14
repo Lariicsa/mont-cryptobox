@@ -17,17 +17,44 @@
     flex-direction: column;
     justify-content: space-between;
     height: 76rem;
-    width: 86.4rem;
+    width: 64vw;
+    max-width: 86.4rem;
     position: relative;
   }
 
   &__top,
   &__bottom {
-    border: 0.1rem dashed $sunglow;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1.6rem;
+  }
+
+  &__top {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    grid-column-gap: 0.8rem;
+    grid-row-gap: 0;
+    padding: 0 2.4rem;
+    margin: 0 auto;
+    position: relative;
+    width: calc(100% - 14.8rem);
+    height: 12.4rem;
+  }
+  &__bottom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: flex-end;
+    align-items: center;
+    grid-column-gap: 0.8rem;
+    grid-row-gap: 0;
+    padding: 0 1.6rem;
+    margin: 0 auto 1.6rem auto;
+    position: relative;
+    width: calc(100% - 12rem);
+    height: 5.6rem;
   }
 
   &__head,
@@ -88,38 +115,11 @@
       max-width: 20rem;
     }
   }
-  &__bottom {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: flex-end;
-    align-items: center;
-    grid-column-gap: 0.8rem;
-    grid-row-gap: 0;
-    padding: 0 1.6rem;
-    margin: 0 0 1.6rem 0;
-    position: relative;
-    width: 100%;
-    height: 5.6rem;
-  }
-
-  &__top {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
-    align-items: center;
-    grid-column-gap: 0.8rem;
-    grid-row-gap: 0;
-    padding: 0 2.4rem;
-    margin: 0;
-    position: relative;
-    width: 100%;
-    height: 12.4rem;
-  }
 
   &__select {
     display: flex;
     position: absolute;
-    left: calc(-100% + 448px);
+    right: 92%;
     top: 5.6rem;
   }
 }

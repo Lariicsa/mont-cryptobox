@@ -10,6 +10,7 @@
   backdrop-filter: blur(20px);
   border-radius: $radius * 4;
   display: flex;
-  width: 48.6rem;
+  width: 36vw;
+  max-width: 48.6rem;
   height: 64rem;
 }

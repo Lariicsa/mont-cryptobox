@@ -3,7 +3,8 @@
     <Header :itemsList="topMenuList" />
     <div class="container__inner">
       <HeroImage :title="heroImageData.title" :text="heroImageData.text" />
-      <Grid>
+     <div class="row globalmargin">
+       <Grid>
         <Icontext
           v-for="item in icons"
           :title="item.title"
@@ -12,7 +13,8 @@
           :key="item.title"
         />
       </Grid>
-      <div class="row right">
+     </div>
+      <div class="row right globalmargin">
         <Maps :mapData="mapsData"> <Dropselect /></Maps>
       </div>
       <Footer logo="" :items="footerItems" :social="footerSocial" />

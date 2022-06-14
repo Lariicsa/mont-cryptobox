@@ -65,7 +65,7 @@ h3 {
   }
   &__inner {
     @extend .container;
-   border: 0.1rem dashed $white-neutral;
+    border: 0.1rem dashed $white-neutral;
     max-width: $maxwidth-inner-containner;
   }
 }
@@ -98,6 +98,10 @@ h3 {
   }
   &.xcenter {
     align-items: center;
+  }
+
+  &.globalmargin {
+    margin: 4rem 0;
   }
 }
 
