@@ -4,4 +4,7 @@
   justify-items: stretch;
   height: auto;
   width: 100%;
+  @include until($tablet-landscape) {
+    display: flex;
+  }
 }

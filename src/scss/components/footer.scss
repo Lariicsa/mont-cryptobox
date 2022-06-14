@@ -3,6 +3,22 @@
   padding: 4rem;
   height: 16rem;
   width: 100%;
+  @include until($tablet-landscape) {
+    height: auto;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 24% 48% 24%;
+    gap: 0.8rem;
+    position: relative;
+    justify-items: stretch;
+    height: auto;
+    width: 100%;
+    @include until($tablet-landscape) {
+      grid-template-columns: 1fr;
+    }
+  }
 
   &__logo {
     @include icon-logo;
@@ -13,6 +29,9 @@
     justify-content: center;
     width: 11.4rem;
     height: 3.2rem;
+    @include until($tablet-landscape) {
+      margin: 0.8rem auto;
+    }
   }
 
   &__list {
@@ -23,6 +42,9 @@
     padding: 0;
     margin: 0;
     width: auto;
+    @include until($tablet-landscape) {
+      margin: 0.8rem auto;
+    }
   }
 
   &__item {
@@ -49,6 +71,9 @@
     padding: 0;
     margin: 0;
     width: auto;
+    @include until($tablet-landscape) {
+      margin: 0.8rem auto;
+    }
   }
 
   &__net {

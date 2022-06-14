@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <Grid columns="24% 48% 24%">
+    <div class="footer__content">
       <div class="footer__logo"></div>
       <ul class="footer__list">
         <li v-for="item in items" :key="item.id">
@@ -16,7 +16,7 @@
           <a :href="net.link"></a>
         </li>
       </ul>
-    </Grid>
+    </div>
   </div>
 </template>
 <script>
