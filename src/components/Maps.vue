@@ -1,8 +1,8 @@
 <template>
   <div class="maps__wrapper">
     <div class="maps__top">
-      <div class="maps__info">{{ mapData.address }}</div>
-      <div class="maps__info" v-html="mapData.horaries"></div>
+      <div class="maps__info address">{{ mapData.address }}</div>
+      <div class="maps__info ping" v-html="mapData.horaries"></div>
     </div>
     <div class="maps">
       <iframe
