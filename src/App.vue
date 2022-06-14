@@ -12,6 +12,7 @@
           :key="item.title"
         />
       </Grid>
+      <Maps :mapData="mapsBasePath + mapsData" />
       <Footer logo="" :items="footerItems" :social="footerSocial" />
     </div>
   </div>
@@ -23,6 +24,7 @@ import Grid from "@/components/Grid.vue";
 import Header from "@/components/Header.vue";
 import HeroImage from "@/components/HeroImage.vue";
 import Icontext from "@/components/IconText.vue";
+import Maps from "@/components/Maps.vue";
 import DATA from "./data";
 
 export default {
@@ -33,6 +35,7 @@ export default {
     Header,
     HeroImage,
     Icontext,
+    Maps,
   },
 
   data() {
@@ -42,6 +45,8 @@ export default {
       icons: DATA.iconText,
       footerItems: DATA.footer.items,
       footerSocial: DATA.footer.social,
+      mapsData: DATA.branches[0].mapurl,
+      mapsBasePath: "https://www.google.com/maps/embed?pb=",
     };
   },
 };
