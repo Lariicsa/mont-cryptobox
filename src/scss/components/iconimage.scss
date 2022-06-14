@@ -3,10 +3,10 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  margin: auto;
   height: auto;
   min-height: 21.6rem;
   width: 100%;
-  max-width: 26rem;
 
   &__icon {
     @include icon("upload", $accent);

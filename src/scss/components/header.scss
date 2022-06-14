@@ -2,6 +2,11 @@
   padding: 2.4rem 0;
   position: relative;
   z-index: 4;
+  max-width:$maxwidth-inner-containner;
+
+  @include from(1140px) {
+    max-width:$maxwidth-containner;
+  }
   &__logo {
     @include icon-logo;
     background-repeat: no-repeat;
