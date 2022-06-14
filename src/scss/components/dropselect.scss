@@ -13,4 +13,8 @@
   width: 36vw;
   max-width: 48.6rem;
   height: 64rem;
+  @include until($tablet-landscape) {
+   width: 98vw;
+   max-width: 100%;
+  }
 }

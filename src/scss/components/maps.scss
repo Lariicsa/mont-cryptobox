@@ -1,5 +1,5 @@
 .maps {
-  background-color: $white-neutral;
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,6 +10,13 @@
   max-width: 86.4rem;
   position: absolute;
   top: 12.4rem;
+
+  @include until($tablet-landscape) {
+    margin: 0 auto;
+    position: relative;
+    top: 16%;
+    left: auto;
+  }
   &__wrapper {
     background-color: $white-neutral;
     border-radius: 1.6rem;
@@ -20,18 +27,35 @@
     width: 64vw;
     max-width: 86.4rem;
     position: relative;
+
+    @include until($tablet-landscape) {
+      background: radial-gradient(
+          97.35% 173.07% at 2.7% 3.2%,
+          rgba(251, 251, 251, 0.42) 0%,
+          rgba(251, 251, 251, 0.42) 0.01%,
+          rgba(255, 252, 252, 0.06) 100%
+        )
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(20px);
+      border-radius: $radius * 4;
+      width: 100%;
+      max-width: 100%;
+    }
   }
 
   &__top,
   &__bottom {
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
     padding: 1.6rem;
+    @include until($tablet-landscape) {
+      display: none;
+    }
   }
 
   &__top {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: center;
@@ -44,7 +68,6 @@
     height: 12.4rem;
   }
   &__bottom {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: flex-end;
     align-items: center;
@@ -121,5 +144,8 @@
     position: absolute;
     right: 92%;
     top: 5.6rem;
+    @include until($tablet-landscape) {
+      display: none;
+    }
   }
 }
