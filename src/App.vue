@@ -3,19 +3,21 @@
     <Header :itemsList="topMenuList" />
     <div class="container__inner">
       <HeroImage :title="heroImageData.title" :text="heroImageData.text" />
-     <div class="row globalmargin">
-       <Grid>
-        <Icontext
-          v-for="item in icons"
-          :title="item.title"
-          :text="item.text"
-          :icon="item.icon"
-          :key="item.title"
-        />
-      </Grid>
-     </div>
+      <div class="row globalmargin">
+        <Grid>
+          <Icontext
+            v-for="item in icons"
+            :title="item.title"
+            :text="item.text"
+            :icon="item.icon"
+            :key="item.title"
+          />
+        </Grid>
+      </div>
       <div class="row right globalmargin">
-        <Maps :mapData="mapsData"> <Dropselect /></Maps>
+        <Maps :mapData="currentBranch">
+          <Dropselect :dropdata="branchesData" @onClick="getBranchData"
+        /></Maps>
       </div>
       <Footer logo="" :items="footerItems" :social="footerSocial" />
     </div>
@@ -52,7 +54,16 @@ export default {
       footerItems: DATA.footer.items,
       footerSocial: DATA.footer.social,
       mapsData: DATA.branches[0],
+      branchesData: DATA.branches,
+      currentBranch: DATA.branches[0],
     };
+  },
+
+  methods: {
+    getBranchData(data) {
+      this.currentBranch = data
+      console.log("data", data);
+    },
   },
 };
 </script>
