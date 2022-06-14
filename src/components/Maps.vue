@@ -23,6 +23,9 @@
       <div class="maps__info" v-html="pricesInfo"></div>
       <div class="maps__info">{{ mapData.altcoins }}</div>
     </div>
+    <div class="maps__select">
+      <slot></slot>
+    </div>
   </div>
 </template>
 <script>

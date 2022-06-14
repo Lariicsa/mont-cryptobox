@@ -115,4 +115,11 @@
     width: 100%;
     height: 12.4rem;
   }
+
+  &__select {
+    display: flex;
+    position: absolute;
+    left: calc(-100% + 486px);
+    top: 5.6rem;
+  }
 }

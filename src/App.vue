@@ -12,7 +12,9 @@
           :key="item.title"
         />
       </Grid>
-      <Maps :mapData="mapsData" />
+      <div class="row right">
+        <Maps :mapData="mapsData"> <Dropselect /></Maps>
+      </div>
       <Footer logo="" :items="footerItems" :social="footerSocial" />
     </div>
   </div>
@@ -26,10 +28,12 @@ import HeroImage from "@/components/HeroImage.vue";
 import Icontext from "@/components/IconText.vue";
 import Maps from "@/components/Maps.vue";
 import DATA from "./data";
+import Dropselect from "./components/Dropselect.vue";
 
 export default {
   name: "App",
   components: {
+    Dropselect,
     Footer,
     Grid,
     Header,

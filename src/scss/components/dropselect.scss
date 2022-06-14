@@ -1,0 +1,15 @@
+.dropselect {
+  background: radial-gradient(
+      97.35% 173.07% at 2.7% 3.2%,
+      rgba(251, 251, 251, 0.42) 0%,
+      rgba(251, 251, 251, 0.42) 0.01%,
+      rgba(255, 252, 252, 0.06) 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  border-radius: $radius * 4;
+  display: flex;
+  width: 48.6rem;
+  height: 64rem;
+}
