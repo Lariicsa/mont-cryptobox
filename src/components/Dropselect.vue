@@ -3,7 +3,6 @@
     class="dropselect__wrapper"
     :class="error ? 'error ' + variant : variant"
   >
-    <!-- <label :class="selected ? 'filled' : ''">{{ phName }}</label> -->
     <select
       :class="
         isDisabled ? 'dropselect disabled ' + variant : 'dropselect ' + variant

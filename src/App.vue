@@ -18,7 +18,7 @@
         {{ currentBranch.branchname }}
         <Maps
           :mapData="currentBranch"
-          :dropselectModel="currentBranch"
+          :dropselectModel="currentBranch.text"
           :dropOptions="branchesListFormatted"
           :dropName="currentBranch.slug"
           @onChangeDrop="getBranchData"

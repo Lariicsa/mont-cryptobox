@@ -29,12 +29,14 @@
   &__subtitle {
     text-align: left;
     margin: 0.8rem 0;
+    @include until($tablet-landscape) {
+      text-align: center;
+    }
   }
 
   &__title {
     color: $sunglow;
     font-weight: $bold;
-
     font-size: $regular-title-size;
     line-height: $regular-title-size;
   }

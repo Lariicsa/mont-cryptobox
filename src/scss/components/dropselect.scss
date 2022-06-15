@@ -1,6 +1,6 @@
 .dropselect {
   border: none;
-  background-color: $white-neutral;
+  background-color: transparent;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -8,13 +8,13 @@
   border-radius: 0.2rem;
   -webkit-appearance: none;
   -moz-appearance: none;
-  font-size: 1.6rem;
+  font-size: $regular-size + 0.2;
   text-align: left;
-  color: $black;
-  font-weight: 500;
+  color: $white-neutral;
+  font-weight: $semibold;
   width: 100%;
-  min-width: 8.2rem;
-  height: 4.4rem;
+  min-width: 8rem;
+  height: 4rem;
   position: relative;
 
   &:focus {
@@ -26,12 +26,12 @@
   }
 
   &__wrapper {
-    border: 0.2rem solid $neutral-grey;
+    border: none;
     position: relative;
     width: 100%;
 
     &:after {
-      @include icon("triangle", $black);
+      @include icon("arrow", $sunglow);
       background-size: contain;
       content: "";
       position: absolute;
