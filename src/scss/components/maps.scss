@@ -14,7 +14,7 @@
   @include until($tablet-landscape) {
     margin: 0 auto;
     position: relative;
-    top: 16%;
+    top: 0;
     left: auto;
     max-width: 92%;
   }
@@ -40,6 +40,10 @@
       border: 1px solid rgba(255, 255, 255, 0.3);
       backdrop-filter: blur(20px);
       border-radius: $radius * 4;
+      justify-content: flex-start;
+      padding: 2.4rem 0;
+      height: auto;
+      min-height: 76rem;
       width: 100%;
       max-width: 100%;
     }
@@ -147,6 +151,20 @@
     top: 5.6rem;
     @include until($tablet-landscape) {
       display: none;
+    }
+  }
+
+  &__mobile {
+    flex-direction: column;
+    padding: 0 2.4rem;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: none;
+
+    @include until($tablet-landscape) {
+      display: flex;
     }
   }
 }
