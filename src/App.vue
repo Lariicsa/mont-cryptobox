@@ -15,7 +15,14 @@
         </Grid>
       </div>
       <div class="row right globalmargin">
-        <Maps :mapData="currentBranch">
+        {{ currentBranch.branchname }}
+        <Maps
+          :mapData="currentBranch"
+          :dropselectModel="currentBranch"
+          :dropOptions="branchesListFormatted"
+          :dropName="currentBranch.slug"
+          @onChangeDrop="getBranchData"
+        >
           <CardlistAction :dropdata="branchesData" @onClick="getBranchData"
         /></Maps>
       </div>
@@ -60,10 +67,23 @@ export default {
     };
   },
 
+  mounted() {
+    this.branchesList;
+  },
+
   methods: {
     getBranchData(data) {
       this.currentBranch = data;
       console.log("data", data);
+    },
+  },
+
+  computed: {
+    branchesListFormatted() {
+      let branches = this.branchesData.map((ele) => {
+        return { ...ele, value: ele.slug, text: ele.branchname };
+      });
+      return branches;
     },
   },
 };

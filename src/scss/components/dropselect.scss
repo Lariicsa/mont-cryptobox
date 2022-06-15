@@ -1,21 +1,49 @@
 .dropselect {
-  background: radial-gradient(
-      97.35% 173.07% at 2.7% 3.2%,
-      rgba(251, 251, 251, 0.42) 0%,
-      rgba(251, 251, 251, 0.42) 0.01%,
-      rgba(255, 252, 252, 0.06) 100%
-    )
-    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(20px);
-  border-radius: $radius * 4;
+  border: none;
+  background-color: $white-neutral;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: row;
   justify-content: flex-start;
-  padding: 5.6rem;
-  width: 36vw;
-  max-width: 48.6rem;
-  height: 64rem;
- 
+  padding: 0 0 0 1.2rem;
+  border-radius: 0.2rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: 1.6rem;
+  text-align: left;
+  color: $black;
+  font-weight: 500;
+  width: 100%;
+  min-width: 8.2rem;
+  height: 4.4rem;
+  position: relative;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &.min {
+    height: 3.8rem;
+  }
+
+  &__wrapper {
+    border: 0.2rem solid $neutral-grey;
+    position: relative;
+    width: 100%;
+
+    &:after {
+      @include icon("triangle", $black);
+      background-size: contain;
+      content: "";
+      position: absolute;
+      top: 1.8rem;
+      right: 1.6rem;
+      height: 1rem;
+      width: 1.2rem;
+      pointer-events: none;
+    }
+  }
+
+  option {
+    pointer-events: none;
+  }
 }

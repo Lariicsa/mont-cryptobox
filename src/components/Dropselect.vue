@@ -1,38 +1,58 @@
 <template>
-  <div class="dropselect">
-    <div class="dropselect__title">Ubica un cajero</div>
-    <div class="dropselect__subtitle">
-      Ubica tu cajero dentro de nuestra red
-    </div>
-    <ul class="dropselect__branches">
-      <li
-        v-for="branch in dropdata"
-        class="dropselect__item"
-        :key="branch.slug"
-        @click="onClick(branch)"
+  <div
+    class="dropselect__wrapper"
+    :class="error ? 'error ' + variant : variant"
+  >
+    <!-- <label :class="selected ? 'filled' : ''">{{ phName }}</label> -->
+    <select
+      :class="
+        isDisabled ? 'dropselect disabled ' + variant : 'dropselect ' + variant
+      "
+      :name="name"
+      v-model="selected"
+      @change="onChange($event.target.value)"
+    >
+      <option v-if="selected" value="">{{ selected ? "selected" : "" }}</option>
+      <option
+        v-for="option in options"
+        :value="option.value"
+        :key="option.value"
       >
-        {{ branch.branchname }}
-      </li>
-    </ul>
+        {{ option.text }}
+      </option>
+    </select>
   </div>
 </template>
 <script>
 export default {
   name: "Dropselect",
 
-  props: {
-    dropdata: {
-      type: Array,
+  props: [
+    "phName",
+    "id",
+    "isDisabled",
+    "options",
+    "value",
+    "name",
+    "size",
+    "error",
+    "variant",
+    "isNumber",
+  ],
+
+  methods: {
+    onChange(value) {
+      this.$emit("input", value);
+      this.$emit("onChange");
     },
   },
 
-  mounted() {
-    this.dropdata;
-  },
-
-  methods: {
-    onClick(data) {
-      this.$emit("onClick", data);
+  computed: {
+    selected: {
+      get: function () {
+        return this.value;
+      },
+      set: function () {},
     },
   },
 };

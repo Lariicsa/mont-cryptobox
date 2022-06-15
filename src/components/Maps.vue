@@ -1,10 +1,17 @@
 <template>
   <div class="maps__wrapper">
     <div class="maps__mobile">
-      <div class="dropselect__title">Ubica un cajero</div>
-      <div class="dropselect__subtitle">
+      <div class="actionlist__title">Ubica un cajero</div>
+      <div class="actionlist__subtitle">
         Ubica tu cajero dentro de nuestra red
       </div>
+      <Dropselect
+        v-model="dropselectModel"
+        phName="placeholder"
+        :options="dropOptions"
+        :name="dropName"
+        @onChange="onChangeDrop(dropselectModel)"
+      />
     </div>
     <div class="maps__top">
       <div class="maps__info address">{{ mapData.address }}</div>
@@ -36,12 +43,26 @@
   </div>
 </template>
 <script>
+import Dropselect from "@/components/Dropselect.vue";
 export default {
   name: "Maps",
+
+  components: {
+    Dropselect,
+  },
 
   props: {
     mapData: {
       type: Object,
+    },
+    dropOptions: {
+      type: Array,
+    },
+    dropselectModel: {
+      type: Object,
+    },
+    dropName: {
+      type: String,
     },
   },
   data() {
@@ -57,6 +78,12 @@ export default {
   computed: {
     pricesInfo() {
       return `${this.mapData.limitBuy} <br/> ${this.mapData.limitSell}`;
+    },
+  },
+
+  methods: {
+    onChangeDrop(data) {
+      this.$emit("onChangeDrop", data);
     },
   },
 };
