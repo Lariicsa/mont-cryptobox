@@ -16,7 +16,7 @@
       </div>
       <div class="row right globalmargin">
         <Maps :mapData="currentBranch">
-          <Dropselect :dropdata="branchesData" @onClick="getBranchData"
+          <CardlistAction :dropdata="branchesData" @onClick="getBranchData"
         /></Maps>
       </div>
       <Footer logo="" :items="footerItems" :social="footerSocial" />
@@ -25,19 +25,20 @@
 </template>
 
 <script>
-import Footer from "@/components/Footer.vue";
-import Grid from "@/components/Grid.vue";
-import Header from "@/components/Header.vue";
-import HeroImage from "@/components/HeroImage.vue";
-import Icontext from "@/components/IconText.vue";
-import Maps from "@/components/Maps.vue";
+import CardlistAction from "@/components/CardlistAction";
+import Footer from "@/components/Footer";
+import Grid from "@/components/Grid";
+import Header from "@/components/Header";
+import HeroImage from "@/components/HeroImage";
+import Icontext from "@/components/IconText";
+import Maps from "@/components/Maps";
 import DATA from "./data";
-import Dropselect from "./components/Dropselect.vue";
 
 export default {
   name: "App",
+
   components: {
-    Dropselect,
+    CardlistAction,
     Footer,
     Grid,
     Header,
@@ -61,7 +62,7 @@ export default {
 
   methods: {
     getBranchData(data) {
-      this.currentBranch = data
+      this.currentBranch = data;
       console.log("data", data);
     },
   },

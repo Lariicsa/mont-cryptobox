@@ -1,0 +1,83 @@
+.actionlist {
+  background: radial-gradient(
+      97.35% 173.07% at 2.7% 3.2%,
+      rgba(251, 251, 251, 0.42) 0%,
+      rgba(251, 251, 251, 0.42) 0.01%,
+      rgba(255, 252, 252, 0.06) 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  border-radius: $radius * 4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 5.6rem;
+  width: 36vw;
+  max-width: 48.6rem;
+  height: 64rem;
+  @include from($tablet-landscape) {
+    padding: 3.8rem;
+  }
+  @include until($tablet-landscape) {
+    width: 98vw;
+    max-width: 100%;
+  }
+
+  &__title,
+  &__subtitle {
+    text-align: left;
+    margin: 0.8rem 0;
+  }
+
+  &__title {
+    color: $sunglow;
+    font-weight: $bold;
+
+    font-size: $regular-title-size;
+    line-height: $regular-title-size;
+  }
+
+  &__subtitle {
+    color: $white-neutral;
+    font-weight: $semibold;
+    font-size: $small-title-size;
+    line-height: $small-title-size + 2;
+  }
+
+  &__branches {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  &__item {
+    font-size: $small-size + 1;
+    line-height: $medium-size * 2;
+    text-indent: $medium-size * 2;
+    margin: 1.6rem 0;
+    position: relative;
+    &:before {
+      content: "";
+      @include icon("wave-mini", $white-neutral);
+      display: inline-block;
+      height: $medium-size;
+      width: $medium-size;
+      position: absolute;
+      left: 0;
+      top: 0.8rem;
+    }
+
+    &:hover {
+      color: $sunglow;
+      @include from($tablet-landscape) {
+        cursor: pointer;
+      }
+      &:before {
+        @include icon("wave-mini", $sunglow);
+      }
+    }
+  }
+}
