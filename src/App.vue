@@ -4,7 +4,7 @@
     <div class="container__inner">
       <HeroImage :title="heroImageData.title" :text="heroImageData.text" />
       <div class="row globalmargin">
-        <Grid>
+        <div class="grid__container cols4">
           <Icontext
             v-for="item in icons"
             :title="item.title"
@@ -12,7 +12,7 @@
             :icon="item.icon"
             :key="item.title"
           />
-        </Grid>
+        </div>
       </div>
       <div class="row right globalmargin">
         {{ currentBranch.branchname }}
