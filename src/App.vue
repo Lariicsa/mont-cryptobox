@@ -15,10 +15,15 @@
         </div>
       </div>
       <div class="row right globalmargin">
-        {{ currentBranch.branchname }}
+        <Dropselect
+          v-model="currentBranch"
+          :options="branchesListFormatted"
+          name="branches"
+          @onChange="getBranchData(currentBranch)"
+        />
         <Maps
           :mapData="currentBranch"
-          :dropselectModel="currentBranch.text"
+          :dropselectModel="currentBranch"
           :dropOptions="branchesListFormatted"
           :dropName="currentBranch.slug"
           @onChangeDrop="getBranchData"
@@ -41,6 +46,8 @@ import Icontext from "@/components/IconText";
 import Maps from "@/components/Maps";
 import DATA from "./data";
 
+import Dropselect from "@/components/Dropselect.vue";
+
 export default {
   name: "App",
 
@@ -52,6 +59,8 @@ export default {
     HeroImage,
     Icontext,
     Maps,
+
+    Dropselect,
   },
 
   data() {
@@ -69,6 +78,7 @@ export default {
 
   mounted() {
     this.branchesList;
+    this.dropOption
   },
 
   methods: {
@@ -84,6 +94,17 @@ export default {
         return { ...ele, value: ele.slug, text: ele.branchname };
       });
       return branches;
+    },
+
+    dropOption: {
+      get() {
+        return this.currentBranch;
+      },
+
+      set(newValue) {
+        this.currentBranch = newValue;
+
+      },
     },
   },
 };
