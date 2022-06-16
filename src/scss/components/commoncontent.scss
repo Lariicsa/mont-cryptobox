@@ -1,0 +1,21 @@
+.common {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: auto;
+  height: auto;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+  }
+
+  &__image,
+  &__text{
+    display: grid;
+    
+  }
+}

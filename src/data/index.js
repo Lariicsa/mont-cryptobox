@@ -180,7 +180,7 @@ export default {
   ],
 
   static01: {
-    image: "",
+    image: "crypto_img2.png",
     span: "btc",
     title: "¿Aún no sabes qué es bitcoin?",
     text: `Bitcoin es una criptomoneda, es decir un tipo de dinero descentralizado basado en un sistema criptográfico de transacciones irreversibles.

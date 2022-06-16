@@ -14,6 +14,12 @@
           />
         </div>
       </div>
+      <div class="row globalmargin">
+        <Commoncontent :image="content1.image" :text="content1.text">
+          <Datitle :span="content1.span" :title="content1.title" />
+        </Commoncontent>
+      </div>
+
       <div class="row right globalmargin">
         <Dropselect
           v-model="currentBranch"
@@ -31,13 +37,15 @@
           <CardlistAction :dropdata="branchesData" @onClick="getBranchData"
         /></Maps>
       </div>
-      <Footer logo="" :items="footerItems" :social="footerSocial" />
+      <Footer :items="footerItems" :social="footerSocial" />
     </div>
   </div>
 </template>
 
 <script>
 import CardlistAction from "@/components/CardlistAction";
+import Commoncontent from "@/components/CommonContent";
+import Datitle from "@/components/Titles";
 import Footer from "@/components/Footer";
 import Grid from "@/components/Grid";
 import Header from "@/components/Header";
@@ -53,6 +61,8 @@ export default {
 
   components: {
     CardlistAction,
+    Commoncontent,
+    Datitle,
     Footer,
     Grid,
     Header,
@@ -73,12 +83,15 @@ export default {
       mapsData: DATA.branches[0],
       branchesData: DATA.branches,
       currentBranch: DATA.branches[0],
+      content1: DATA.static01,
+      title2: DATA.static02,
+      title3: DATA.static03,
     };
   },
 
   mounted() {
     this.branchesList;
-    this.dropOption
+    this.dropOption;
   },
 
   methods: {
@@ -103,7 +116,6 @@ export default {
 
       set(newValue) {
         this.currentBranch = newValue;
-
       },
     },
   },
