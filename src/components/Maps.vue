@@ -16,6 +16,12 @@
     <div class="maps__top">
       <div class="maps__info address">{{ mapData.address }}</div>
       <div class="maps__info ping" v-html="mapData.horaries"></div>
+      <div class="maps__head hideIndesktop">Fecha de instalación</div>
+      <div class="maps__info hideIndesktop">{{ mapData.installation }}</div>
+      <div class="maps__head hideIndesktop">límites</div>
+      <div class="maps__info hideIndesktop" v-html="pricesInfo"></div>
+      <div class="maps__head hideIndesktop">criptomonedas</div>
+      <div class="maps__info hideIndesktop">{{ mapData.altcoins }}</div>
     </div>
     <div class="maps">
       <iframe

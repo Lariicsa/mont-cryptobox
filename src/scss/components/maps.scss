@@ -43,7 +43,7 @@
       justify-content: flex-start;
       padding: 2.4rem 0;
       height: auto;
-      min-height: 76rem;
+      min-height: 90vh;
       width: 100%;
       max-width: 100%;
     }
@@ -56,7 +56,7 @@
     align-items: center;
     padding: 1.6rem;
     @include until($tablet-landscape) {
-      display: none;
+      //display: none;
     }
   }
 
@@ -71,6 +71,14 @@
     position: relative;
     width: calc(100% - 14.8rem);
     height: 12.4rem;
+
+    @include until($tablet-landscape) {
+      grid-template-columns: 1fr;
+      grid-column-gap: 0;
+      grid-row-gap: 1.6rem;
+      height: auto;
+      width: 100%;
+    }
   }
   &__bottom {
     grid-template-columns: repeat(3, 1fr);
@@ -83,6 +91,9 @@
     position: relative;
     width: calc(100% - 12rem);
     height: 5.6rem;
+    @include until($tablet-landscape) {
+      display: none;
+    }
   }
 
   &__head,
@@ -96,12 +107,21 @@
     font-size: $small-size;
     line-height: $medium-size;
     text-align: center;
+    &.hideIndesktop {
+      display: none;
+      @include until($tablet-landscape) {
+        display: grid;
+      }
+    }
   }
 
   &__head {
     color: $accent;
     text-transform: uppercase;
     justify-content: flex-end;
+    @include until($tablet-landscape) {
+      color: $sunglow;
+    }
   }
 
   &__info {
@@ -110,6 +130,9 @@
     width: auto;
     height: auto;
     position: relative;
+    @include until($tablet-landscape) {
+      color: $white-neutral;
+    }
 
     &:before {
       content: "";
@@ -119,17 +142,31 @@
       position: absolute;
       top: 0;
       left: 0;
+      @include until($tablet-landscape) {
+        margin-left: -0.9rem;
+        top: 1rem;
+        left: 50%;
+      }
     }
     &.address {
+      @include until($tablet-landscape) {
+        padding: 3.2rem 0 0 0;
+      }
       &:before {
         @include icon("map", $sunglow);
       }
     }
 
     &.ping {
+      @include until($tablet-landscape) {
+        padding: 3.2rem 0 0 0;
+      }
       &:before {
         @include icon("ping", $sunglow);
         top: 1.6rem;
+        @include until($tablet-landscape) {
+          top: 1rem;
+        }
       }
     }
 
