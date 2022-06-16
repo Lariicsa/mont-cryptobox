@@ -1,12 +1,7 @@
 <template>
-  <div
-    class="dropselect__wrapper"
-    :class="error ? 'error ' + variant : variant"
-  >
+  <div class="dropselect__wrapper">
     <select
-      :class="
-        isDisabled ? 'dropselect disabled ' + variant : 'dropselect ' + variant
-      "
+      class="dropselect"
       :name="name"
       v-model="selected"
       @change="onChange($event.target.value)"
@@ -26,18 +21,7 @@
 export default {
   name: "Dropselect",
 
-  props: [
-    "phName",
-    "id",
-    "isDisabled",
-    "options",
-    "value",
-    "name",
-    "size",
-    "error",
-    "variant",
-    "isNumber",
-  ],
+  props: ["id", "options", "value", "name"],
 
   methods: {
     onChange(value) {
@@ -51,7 +35,9 @@ export default {
       get: function () {
         return this.value;
       },
-      set: function () {},
+      set(selected) {
+        this.$emit('input', selected)
+      },
     },
   },
 };

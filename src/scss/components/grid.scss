@@ -4,7 +4,23 @@
   justify-items: stretch;
   height: auto;
   width: 100%;
-  @include until($tablet-landscape) {
-    display: flex;
+
+  &.cols4 {
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: stretch;
+    justify-content: space-between;
+    align-items: flex-start;
+    grid-column-gap: 0.8rem;
+    grid-row-gap: 0.8rem;
+
+    @include until($tablet-landscape) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include tablet {
+      grid-column-gap: 3.2rem;
+    }
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
   }
 }
