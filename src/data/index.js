@@ -178,4 +178,23 @@ export default {
         "!1m18!1m12!1m3!1d3761.014299487752!2d-99.23859194953609!3d19.498020586782637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2031f9aed88cb%3A0xcdc1f04da01e611f!2sFant%C3%A1stico!5e0!3m2!1ses-419!2smx!4v1593542964384!5m2!1ses-419!2smx",
     },
   ],
+
+  static01: {
+    image: "",
+    span: "btc",
+    title: "¿Aún no sabes qué es bitcoin?",
+    text: `Bitcoin es una criptomoneda, es decir un tipo de dinero descentralizado basado en un sistema criptográfico de transacciones irreversibles.
+    Estas características hacen que las transacciones en bitcoins sean anónimas y seguras, además de no depender de una entidad central sino de la propia comunidad, lo cuál ha generado un mercado atractivo de diversificación monetaria confiable en Internet.`,
+  },
+
+  static02: {
+    span: "tu bitcoin en efectivo",
+    title: "¿Cómo funcionan los cajeros?",
+  },
+
+  static03: {
+    title: "Moneda digital descentralizada",
+    text: `Leo mauris viverra sapien, dictumst nunc egestas morbi magna. Integer ligula tellus fermentum nec.
+    Volutpat velit turpis euismod. Mi blandit egestas netus nisl facilisis diam, turpis leo. Habitant turpis orci habitant.`,
+  },
 };
