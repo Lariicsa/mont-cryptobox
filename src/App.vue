@@ -21,12 +21,12 @@
       </div>
 
       <div class="row right globalmargin">
-        <Dropselect
+        <!-- <Dropselect
           v-model="currentBranch"
           :options="branchesListFormatted"
           name="branches"
           @onChange="getBranchData(currentBranch)"
-        />
+        /> -->
         <Maps
           :mapData="currentBranch"
           :dropselectModel="currentBranch"
