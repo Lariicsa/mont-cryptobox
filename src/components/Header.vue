@@ -6,7 +6,7 @@
     <Navigation ui="mobile" v-show="isMenuOpen" :itemsList="itemsList" />
     <div class="header__navigation">
       <Navigation :itemsList="itemsList" @clickPrice="showPrices" />
-      <Cardlist v-show="showAltcoins" :altcoins="listAlcoins" @onMouseLeave="hidePricesOnBlur" />
+      <Cardlist v-show="showAltcoins" :altcoins="listAlcoins" @onMouseLeave="hidePricesOnBlur" top="6rem" right="0" />
     </div>
   </div>
 </template>

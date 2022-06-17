@@ -1,5 +1,11 @@
 <template>
-  <div class="cardlist__wrapper" @mouseleave="onMouseLeave">
+  <div
+    :class="isRelative ? 'cardlist__wrapper full' : 'cardlist__wrapper'"
+    @mouseleave="onMouseLeave"
+    :style="`position:${
+      isRelative ? 'relative' : 'absolute'
+    }; top:${top}; right:${right}`"
+  >
     <div class="cardlist" v-for="coin in altcoins" :key="coin.slug">
       <div class="cardlist__name">{{ coin.slug }}</div>
       <div class="cardlist__values">
@@ -16,6 +22,18 @@ export default {
   props: {
     altcoins: {
       type: Array,
+    },
+    isRelative: {
+      type: Boolean,
+      default: false,
+    },
+    top: {
+      type: String,
+      default: "6rem",
+    },
+    right: {
+      type: String,
+      default: "0",
     },
   },
 

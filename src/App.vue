@@ -2,7 +2,10 @@
   <div class="container__main">
     <Header :itemsList="topMenuList" />
     <div class="container__inner">
-      <HeroImage :title="heroImageData.title" :text="heroImageData.text" />
+      <div class="row globalmargin">
+        <HeroImage :title="heroImageData.title" :text="heroImageData.text" />
+        <Cardlist :altcoins="listAlcoins" :isRelative="true" top="-2rem" right="0" />
+      </div>
       <div class="row globalmargin">
         <div class="grid__container cols4">
           <Icontext
@@ -44,6 +47,7 @@
 
 <script>
 import CardlistAction from "@/components/CardlistAction";
+import Cardlist from "@/components/CardList";
 import Commoncontent from "@/components/CommonContent";
 import Datitle from "@/components/Titles";
 import Footer from "@/components/Footer";
@@ -61,6 +65,7 @@ export default {
 
   components: {
     CardlistAction,
+    Cardlist,
     Commoncontent,
     Datitle,
     Footer,
@@ -86,6 +91,7 @@ export default {
       content1: DATA.static01,
       title2: DATA.static02,
       title3: DATA.static03,
+      listAlcoins: DATA.listCryptos,
     };
   },
 

@@ -32,14 +32,19 @@
     max-width: 35rem;
     height: auto;
     position: absolute;
-    top: 6rem;
-    right: 0;
 
     & > hr {
       background-color: $neutral-grey;
       border: none;
       width: 100%;
       height: 0.1rem;
+    }
+
+    &.full {
+      max-width: 96vw;
+      @include from($tablet-landscape) {
+        display: none;
+      }
     }
   }
 
