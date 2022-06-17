@@ -6,7 +6,6 @@
   position: relative;
 
   @include mobile {
-    background-color: $neutral-grey;
     flex-direction: column;
     position: absolute;
     z-index: 10;
@@ -40,7 +39,7 @@
   }
 
   &.mobile {
-    background-color: $neutral-grey;
+    background-color: $neutral-dgrey;
     flex-direction: column;
   }
 
@@ -54,6 +53,7 @@
     }
 
     &.mobile {
+      background-color: $neutral-dgrey;
       flex-direction: column;
     }
   }
