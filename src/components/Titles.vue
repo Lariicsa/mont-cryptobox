@@ -1,7 +1,7 @@
 <template>
   <div class="datitle__wrapper">
     <span class="datitle__span">{{ span }}</span>
-    <div class="datitle">{{ title }}</div>
+    <h2 class="datitle">{{ title }}</h2>
   </div>
 </template>
 <script>

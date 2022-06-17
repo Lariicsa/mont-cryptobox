@@ -1,17 +1,17 @@
 .datitle {
-  color: $white-neutral;
-  font-size: $regular-title-size;
-  line-height: $regular-size + 1rem;
+
   &__wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
   }
   &__span {
-    color: inherit;
-    font-size: $medium-size;
-    line-height: $medium-size;
-    font-weight: $semibold;
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+    text-transform: uppercase;
+    height: auto;
+    width: auto;
   }
 }
