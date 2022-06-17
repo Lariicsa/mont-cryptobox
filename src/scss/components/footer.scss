@@ -4,6 +4,7 @@
   height: 16rem;
   width: 100%;
   @include until($tablet-landscape) {
+    padding: 1.6rem;
     height: auto;
   }
 
@@ -77,16 +78,50 @@
   }
 
   &__net {
-    @include icon("youtube", $white-neutral);
     background-size: contain;
     background-position: center;
     margin: 0 1.2rem;
     display: flex;
     height: 1.8rem;
     width: 2.2rem;
-    &:hover {
-      @include from($tablet-landscape) {
-        @include icon("youtube", $sunglow);
+
+    &.youtube {
+      @include icon("youtube", $white-neutral);
+      &:hover {
+        @include from($tablet-landscape) {
+          @include icon("youtube", $sunglow);
+        }
+      }
+      &:active {
+        @include until($tablet-landscape) {
+          @include icon("youtube", $sunglow);
+        }
+      }
+    }
+    &.twitter {
+      @include icon("twitter", $white-neutral);
+      &:hover {
+        @include from($tablet-landscape) {
+          @include icon("twitter", $sunglow);
+        }
+      }
+      &:active {
+        @include until($tablet-landscape) {
+          @include icon("twitter", $sunglow);
+        }
+      }
+    }
+    &.facebook {
+      @include icon("facebook", $white-neutral);
+      &:hover {
+        @include from($tablet-landscape) {
+          @include icon("facebook", $sunglow);
+        }
+      }
+      &:active {
+        @include until($tablet-landscape) {
+          @include icon("facebook", $sunglow);
+        }
       }
     }
   }

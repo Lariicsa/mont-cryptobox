@@ -73,6 +73,7 @@
     height: 12.4rem;
 
     @include until($tablet-landscape) {
+      margin: 1.6rem auto;
       grid-template-columns: 1fr;
       grid-column-gap: 0;
       grid-row-gap: 1.6rem;
@@ -87,7 +88,7 @@
     grid-column-gap: 0.8rem;
     grid-row-gap: 0;
     padding: 0 1.6rem;
-    margin: 0 auto 1.6rem auto;
+    margin: 1.6rem auto;
     position: relative;
     width: calc(100% - 12rem);
     height: 5.6rem;
