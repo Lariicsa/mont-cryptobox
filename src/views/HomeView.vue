@@ -44,6 +44,9 @@
         <CardlistAction :dropdata="branchesData" @onClick="getBranchData"
       /></Maps>
     </div>
+    <div class="row between globalmargin">
+      <Form></Form>
+    </div>
     <Footer :items="footerItems" :social="footerSocial" />
   </div>
 </template>
@@ -54,6 +57,7 @@ import Cardlist from "@/components/CardList";
 import Commoncontent from "@/components/CommonContent";
 import Datitle from "@/components/Titles";
 import Footer from "@/components/Footer";
+import Form from "@/components/Form";
 import Grid from "@/components/Grid";
 import Header from "@/components/Header";
 import HeroImage from "@/components/HeroImage";
@@ -72,6 +76,7 @@ export default {
     Commoncontent,
     Datitle,
     Footer,
+    Form,
     Grid,
     Header,
     HeroImage,

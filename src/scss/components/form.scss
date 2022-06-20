@@ -1,0 +1,15 @@
+.form {
+  &__button {
+    background-color: transparent;
+    border: 0.1rem solid $white-neutral;
+    border-radius: $small-title-size;
+    padding: 0;
+    font-size: $regular-size;
+    color: $white-neutral;
+    font-weight: $regular;
+    text-indent: 2.4rem;
+    width: 100%;
+    height: 5.6rem;
+    position: relative;
+  }
+}
