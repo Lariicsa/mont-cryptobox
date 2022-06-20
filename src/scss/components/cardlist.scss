@@ -42,6 +42,7 @@
 
     &.full {
       max-width: 96vw;
+      z-index: 11;
       @include from($tablet-landscape) {
         display: none;
       }
