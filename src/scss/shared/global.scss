@@ -46,6 +46,10 @@ h2 {
 h3 {
   font-size: $small-title-size;
   line-height: $small-title-size + $global-rythm;
+  @include until($tablet-landscape) {
+    font-size: $medium-size + $radius;
+    line-height: $medium-size + 0.4rem;
+  }
 }
 
 .space {
@@ -108,6 +112,13 @@ h3 {
   }
   &.xcenter {
     align-items: center;
+  }
+
+  &.sm,
+  &.md {
+    @include until($tablet-landscape) {
+      width: 100%;
+    }
   }
 
   &.globalmargin {

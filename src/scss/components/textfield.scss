@@ -27,6 +27,31 @@
     }
   }
 
+  & > label {
+    font-size: $regular-size;
+    color: $neutral-silver;
+    font-weight: $regular;
+    position: absolute;
+    top: 2rem;
+    left: 3.2rem;
+    transform-origin: left;
+    transition: transform 0.2s ease-in-out;
+    will-change: transform;
+    pointer-events: none;
+    z-index: 2;
+    &:active {
+      color: $sunglow;
+      cursor: text;
+    }
+    &.filled {
+      background-color: transparent;
+      padding: 0.8rem;
+      font-size: $small-size;
+      color: $white-neutral;
+      transform: scale(1) translateX(-2rem) translateY(-4.4rem);
+    }
+  }
+
   &__title {
     font-size: $small-title-size;
     line-height: $small-title-size + $global-padding;
