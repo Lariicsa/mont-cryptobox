@@ -1,4 +1,4 @@
-# cryptobox-lp
+# cp-landing
 
 ## Project setup
 ```
