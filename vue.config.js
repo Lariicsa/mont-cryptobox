@@ -9,3 +9,5 @@ module.exports = defineConfig({
     config.optimization.splitChunks().clear();
   },
 });
+
+

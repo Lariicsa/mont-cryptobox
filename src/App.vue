@@ -12,7 +12,7 @@ import Header from "@/components/Header";
 import DATA from "./data";
 
 export default {
-  name: "HomeView",
+  name: "App",
 
   components: {
     Footer,

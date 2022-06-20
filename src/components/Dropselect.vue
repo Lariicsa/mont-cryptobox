@@ -27,6 +27,7 @@ export default {
     onChange(value) {
       this.$emit("input", value);
       this.$emit("onChange");
+      console.log('ds', value);
     },
   },
 
@@ -35,9 +36,7 @@ export default {
       get: function () {
         return this.value;
       },
-      set(selected) {
-        this.$emit('input', selected)
-      },
+      set: function () {},
     },
   },
 };

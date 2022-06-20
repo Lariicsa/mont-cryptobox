@@ -1,52 +1,51 @@
 <template>
- 
-    <!-- <Header :itemsList="topMenuList" /> -->
-    <div class="container__inner">
-      <div class="row globalmargin">
-        <HeroImage :title="heroImageData.title" :text="heroImageData.text" />
-        <Cardlist
-          :altcoins="listAlcoins"
-          :isRelative="true"
-          top="-2rem"
-          right="0"
+  <!-- <Header :itemsList="topMenuList" /> -->
+  <div class="container__inner">
+    <div class="row globalmargin">
+      <HeroImage :title="heroImageData.title" :text="heroImageData.text" />
+      <Cardlist
+        :altcoins="listAlcoins"
+        :isRelative="true"
+        top="-2rem"
+        right="0"
+      />
+    </div>
+    <div class="row globalmargin">
+      <div class="grid__container cols4">
+        <Icontext
+          v-for="item in icons"
+          :title="item.title"
+          :text="item.text"
+          :icon="item.icon"
+          :key="item.title"
         />
       </div>
-      <div class="row globalmargin">
-        <div class="grid__container cols4">
-          <Icontext
-            v-for="item in icons"
-            :title="item.title"
-            :text="item.text"
-            :icon="item.icon"
-            :key="item.title"
-          />
-        </div>
-      </div>
-      <div class="row globalmargin">
-        <Commoncontent :image="content1.image" :text="content1.text">
-          <Datitle :span="content1.span" :title="content1.title" />
-        </Commoncontent>
-      </div>
-
-      <div class="row right globalmargin">
-        <!-- <Dropselect
-          v-model="currentBranch"
-          :options="branchesListFormatted"
-          name="branches"
-          @onChange="getBranchData(currentBranch)"
-        /> -->
-        <Maps
-          :mapData="currentBranch"
-          :dropselectModel="currentBranch"
-          :dropOptions="branchesListFormatted"
-          :dropName="currentBranch.slug"
-          @onChangeDrop="getBranchData"
-        >
-          <CardlistAction :dropdata="branchesData" @onClick="getBranchData"
-        /></Maps>
-      </div>
-      <Footer :items="footerItems" :social="footerSocial" />
     </div>
+    <div class="row globalmargin">
+      <Commoncontent :image="content1.image" :text="content1.text">
+        <Datitle :span="content1.span" :title="content1.title" />
+      </Commoncontent>
+    </div>
+
+    <div class="row right globalmargin">
+      <Dropselect
+        v-model="currentBranch"
+        :options="branchesListFormatted"
+        :name="currentBranch.text"
+        @onChange="setBranchData(currentBranch)"
+      />
+      <Maps
+        :mapData="currentBranch"
+        :dropselectModel="currentBranch"
+        :dropOptions="branchesListFormatted"
+        :dropName="currentBranch.slug"
+        @onChangeDrop="getBranchData"
+      >
+        <CardlistAction :dropdata="branchesData" @onClick="getBranchData"
+      /></Maps>
+    </div>
+    <Footer :items="footerItems" :social="footerSocial" />
+  </div>
 </template>
 
 <script>
@@ -101,12 +100,37 @@ export default {
 
   mounted() {
     this.branchesList;
-    this.dropOption;
   },
 
   methods: {
     getBranchData(data) {
       this.currentBranch = data;
+    },
+
+    setBranchData(data) {
+      const DROP_OPTION = data;
+
+      switch (DROP_OPTION) {
+        case "delvalle":
+          this.currentBranch = this.branchesListFormatted[0];
+          break;
+        case "gdl":
+          this.currentBranch = this.branchesListFormatted[1];
+          break;
+        case "mty":
+          this.currentBranch = this.branchesListFormatted[2];
+          break;
+        case "qro":
+          this.currentBranch = this.branchesListFormatted[3];
+          break;
+        case "satelite":
+          this.currentBranch = this.branchesListFormatted[4];
+          break;
+        default:
+          this.currentBranch = this.branchesListFormatted[0];
+          break;
+      }
+
       console.log("data", data);
     },
   },
@@ -119,15 +143,15 @@ export default {
       return branches;
     },
 
-    dropOption: {
-      get() {
-        return this.currentBranch;
-      },
+    // dropOption: {
+    //   get() {
+    //     return this.currentBranch;
+    //   },
 
-      set(newValue) {
-        this.currentBranch = newValue;
-      },
-    },
+    //   set(newValue) {
+    //     this.currentBranch = newValue;
+    //   },
+    // },
   },
 };
 </script>
