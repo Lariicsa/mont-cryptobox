@@ -8,6 +8,7 @@
   </div>
 </template>
 <script>
+import CANVAS from "../utils/index";
 export default {
   name: "HeroImage",
   props: {
@@ -17,6 +18,10 @@ export default {
     text: {
       type: String,
     },
+  },
+
+  mounted() {
+    CANVAS;
   },
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div id="app" c class="space">
+  <div id="app" class="space">
     <div class="container__main">
       <Header :itemsList="topMenuList" />
       <router-view />

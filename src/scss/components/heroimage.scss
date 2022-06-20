@@ -42,9 +42,15 @@
 
 canvas {
   position: absolute;
-  top: 24%;
+  top: 8%; 
   right: 50%;
-  margin: -24.5rem -45rem auto auto;
+  margin: -24.5rem -45rem auto auto; 
   max-width: 100%;
   height: auto;
+  z-index: 0;
+  @include tablet {
+    margin: -24.5rem -15rem auto auto; 
+  }
 }
+
+
