@@ -6,7 +6,7 @@
       v-model="selected"
       @change="onChange($event.target.value)"
     >
-      <option v-if="selected" value="">{{ selected ? "selected" : "" }}</option>
+      <option v-if="selected" value="">{{ selected ? selected.text : "" }}</option>
       <option
         v-for="option in options"
         :value="option.value"

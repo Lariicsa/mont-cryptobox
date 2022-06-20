@@ -123,7 +123,7 @@ export default {
     {
       slug: "gdl",
       branchname: "Fantástico Guadalajara",
-      installation: "13 Diciembre 2018",
+      installation: "14 Diciembre 2018",
       limitBuy: "Compra $10,000 MXN",
       limitSell: "Venta $10,000 MXN",
       altcoins: "bitcoin",
@@ -137,7 +137,7 @@ export default {
     {
       slug: "mty",
       branchname: "Comicastle Monterrey",
-      installation: "13 Diciembre 2018",
+      installation: "15 Diciembre 2018",
       limitBuy: "Compra $10,000 MXN",
       limitSell: "Venta $10,000 MXN",
       altcoins: "bitcoin",
@@ -152,7 +152,7 @@ export default {
     {
       slug: "qro",
       branchname: "Comicastle Querétaro",
-      installation: "13 Diciembre 2018",
+      installation: "16 Diciembre 2018",
       limitBuy: "Compra $10,000 MXN",
       limitSell: "Venta $10,000 MXN",
       altcoins: "bitcoin",
@@ -166,7 +166,7 @@ export default {
     {
       slug: "satelite",
       branchname: "Fantástico Satélite",
-      installation: "13 Diciembre 2018",
+      installation: "17 Diciembre 2018",
       limitBuy: "Compra $10,000 MXN",
       limitSell: "Venta $10,000 MXN",
       altcoins: "bitcoin",

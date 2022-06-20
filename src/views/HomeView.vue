@@ -36,10 +36,10 @@
       />
       <Maps
         :mapData="currentBranch"
-        :dropselectModel="currentBranch"
+        :dropselectModel="branchesListFormatted"
         :dropOptions="branchesListFormatted"
         :dropName="currentBranch.slug"
-        @onChangeDrop="getBranchData"
+        @onChangeDrop="setBranchData(currentBranch)"
       >
         <CardlistAction :dropdata="branchesData" @onClick="getBranchData"
       /></Maps>
