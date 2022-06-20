@@ -52,17 +52,17 @@ export default {
       icon: "upload",
     },
     {
-      title: "Ingresa",
+      title: "Ingresa2",
       text: "Egestas sagittis ipsum habitant at diam.",
       icon: "upload",
     },
     {
-      title: "Ingresa",
+      title: "Ingresa3",
       text: "Egestas sagittis ipsum habitant at diam.",
       icon: "upload",
     },
     {
-      title: "Ingresa",
+      title: "Ingresa4",
       text: "Egestas sagittis ipsum habitant at diam.",
       icon: "upload",
     },

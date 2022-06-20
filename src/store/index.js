@@ -1,21 +1,17 @@
-import { createStore } from "vuex";
-import { getAltcoinPrice } from "../API/index";
+import Vue from 'vue'
+import Vuex from 'vuex'
 
-export default createStore({
+Vue.use(Vuex)
+
+export default new Vuex.Store({
   state: {
-    coinName: "",
-    coinPrice: "",
   },
-  getters: {},
-  mutations: {},
+  getters: {
+  },
+  mutations: {
+  },
   actions: {
-    async getAltcoinPrice({ commit }, book) {
-      try {
-        const response = await getAltcoinPrice();
-        console.log(response.data);
-      } catch (error) {
-        console.log(error.response);
-      }
-    },
   },
-});
+  modules: {
+  }
+})

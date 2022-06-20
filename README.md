@@ -1,4 +1,4 @@
-# cryptobox
+# cryptobox-lp
 
 ## Project setup
 ```
