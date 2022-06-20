@@ -21,9 +21,13 @@
       color: $neutral-silver;
       font-weight: $regular;
     }
-    &:focus {
+    &:focus,
+    &:focus-visible {
       border: 0.1rem solid $accent;
       font-weight: $regular;
+      outline-color: -webkit-focus-ring-color;
+      outline-style: none;
+      outline-width: 0;
     }
   }
 

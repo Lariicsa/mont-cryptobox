@@ -17,7 +17,6 @@
         </div>
         <Inputfield
           phName="Nombre:"
-          :autofocus="true"
           name="nombre"
           type="text"
           v-model="userAddress.nombre"
