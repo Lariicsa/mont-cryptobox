@@ -5,13 +5,13 @@
       <div class="actionlist__subtitle">
         Ubica tu cajero dentro de nuestra red
       </div>
-      <Dropselect
+      <!-- <Dropselect
         v-model="dropselectModel"
         phName="placeholder"
         :options="dropOptions"
         :name="dropName"
         @onChange="onChangeDrop(dropselectModel)"
-      />
+      /> -->
     </div>
     <div class="maps__top">
       <div class="maps__info address">{{ mapData.address }}</div>

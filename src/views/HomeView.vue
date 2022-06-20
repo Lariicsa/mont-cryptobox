@@ -28,17 +28,15 @@
     </div>
 
     <div class="row right globalmargin">
-      <Dropselect
+      <!-- <Dropselect
         v-model="currentBranch"
         :options="branchesListFormatted"
         :name="currentBranch.text"
         @onChange="setBranchData(currentBranch)"
-      />
+      /> -->
       <Maps
         :mapData="currentBranch"
-        :dropselectModel="branchesListFormatted"
-        :dropOptions="branchesListFormatted"
-        :dropName="currentBranch.slug"
+
         @onChangeDrop="setBranchData(currentBranch)"
       >
         <CardlistAction :dropdata="branchesData" @onClick="getBranchData"
