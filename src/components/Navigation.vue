@@ -7,7 +7,7 @@
           v-for="item in itemsList"
           :key="item.id"
         >
-          <a :href="item.pathName" :class="'navigation__item ' + ui">{{
+          <a :href="'#'+item.pathName" :class="'navigation__item ' + ui">{{
             item.value
           }}</a>
 

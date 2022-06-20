@@ -21,13 +21,13 @@
         />
       </div>
     </div>
-    <div class="row globalmargin">
+    <div id="bitcoin" class="row globalmargin">
       <Commoncontent :image="content1.image" :text="content1.text">
         <Datitle :span="content1.span" :title="content1.title" />
       </Commoncontent>
     </div>
 
-    <div class="row right globalmargin">
+    <div id="cajeros" class="row right globalmargin">
       <!-- <Dropselect
         v-model="currentBranch"
         :options="branchesListFormatted"
