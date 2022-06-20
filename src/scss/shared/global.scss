@@ -29,11 +29,19 @@ h3 {
 h1 {
   font-size: $big-title-size;
   line-height: $big-title-size + $global-rythm;
+  @include until($tablet-landscape) {
+    font-size: $regular-title-size;
+    line-height: $big-title-size - $global-rythm;
+  }
 }
 
 h2 {
   font-size: $regular-title-size;
   line-height: $big-title-size + $global-rythm;
+  @include until($tablet-landscape) {
+    font-size: $small-title-size;
+    line-height: $medium-size + 2rem;
+  }
 }
 h3 {
   font-size: $small-title-size;
