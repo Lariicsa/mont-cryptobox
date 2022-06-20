@@ -1,7 +1,9 @@
 <template>
-  <div id="app" class="space">
-    <Header :itemsList="topMenuList" />
-    <router-view />
+  <div id="app" c class="space">
+    <div class="container__main">
+      <Header :itemsList="topMenuList" />
+      <router-view />
+    </div>
   </div>
 </template> 
 <script>

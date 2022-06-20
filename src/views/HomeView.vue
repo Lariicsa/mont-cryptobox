@@ -1,5 +1,5 @@
 <template>
-  <div class="container__main">
+ 
     <!-- <Header :itemsList="topMenuList" /> -->
     <div class="container__inner">
       <div class="row globalmargin">
@@ -47,7 +47,6 @@
       </div>
       <Footer :items="footerItems" :social="footerSocial" />
     </div>
-  </div>
 </template>
 
 <script>
