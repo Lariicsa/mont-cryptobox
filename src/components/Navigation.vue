@@ -8,7 +8,7 @@
           :key="item.id"
           @click="itemClick"
         >
-          <a :href="'#'+item.pathName" :class="'navigation__item ' + ui">{{
+          <a :href="'#' + item.pathName" :class="'navigation__item ' + ui">{{
             item.value
           }}</a>
 
@@ -74,6 +74,9 @@ export default {
 
     clickPrice() {
       this.$emit("clickPrice");
+    },
+    itemClick() {
+      this.$emit("itemClick");
     },
   },
 };
