@@ -1,7 +1,7 @@
 <template>
   <!-- <Header :itemsList="topMenuList" /> -->
   <div class="container__inner">
-    {{ btcData.btc_mxn }}
+
     <div class="row globalmargin">
       <HeroImage :title="heroImageData.title" :text="heroImageData.text" />
       <Cardlist
@@ -108,18 +108,18 @@ export default {
     };
   },
 
-  created() {
-    const BTC_DATA = { action: "SUBSCRIBE", market: "btc_mxn" };
-    this.socket = new WebSocket("ws://localhost:9001/ws");
-    this.socket.onopen = () => {
-      this.status = "connected";
-      this.socket.send(JSON.stringify(BTC_DATA));
-      this.socket.onmessage = (event) => {
-        console.log(event.data);
-        this.btcData = JSON.parse(event.data);
-      };
-    };
-  },
+  // created() {
+  //   const BTC_DATA = { action: "SUBSCRIBE", market: "btc_mxn" };
+  //   this.socket = new WebSocket("ws://localhost:9001/ws");
+  //   this.socket.onopen = () => {
+  //     this.status = "connected";
+  //     this.socket.send(JSON.stringify(BTC_DATA));
+  //     this.socket.onmessage = (event) => {
+  //       console.log(event.data);
+  //       this.btcData = JSON.parse(event.data);
+  //     };
+  //   };
+  // },
 
   mounted() {
     this.branchesList;
@@ -128,12 +128,6 @@ export default {
   methods: {
     getBranchData(data) {
       this.currentBranch = data;
-    },
-
-    sendMessage(message) {
-      console.log("Hello");
-      console.log(this.connection);
-      this.connection.send(message);
     },
 
     setBranchData(data) {
@@ -172,15 +166,15 @@ export default {
       return branches;
     },
 
-    btcWSprice() {
-      let WS_DATA = this.btcData.btc_mxn.spot;
-      const DATA = {
-        altcoin: "Bitcoin",
-        price: WS_DATA,
-        value: "bitcoin",
-      };
-      return DATA;
-    },
+    // btcWSprice() {
+    //   let WS_DATA = this.btcData.btc_mxn.spot;
+    //   const DATA = {
+    //     altcoin: "Bitcoin",
+    //     price: WS_DATA,
+    //     value: "bitcoin",
+    //   };
+    //   return DATA;
+    // },
 
     // dropOption: {
     //   get() {

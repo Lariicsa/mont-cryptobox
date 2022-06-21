@@ -24,7 +24,7 @@
         </li>
         <Cryptoprice
           v-model="currentAltcoin"
-          :salected="priceData[0]"
+          :altcoinData="priceData"
           @onClick="clickPrice"
         />
       </ul>
@@ -44,7 +44,6 @@ export default {
   data() {
     return {
       currentAltcoin: "Bitcoin",
-      priceData: DATA.cryptoPrices,
     };
   },
 
@@ -60,6 +59,10 @@ export default {
     hasSubmenues: {
       type: Boolean,
       default: false,
+    },
+    priceData: {
+      type: Object,
+      default: null,
     },
   },
 

@@ -1,7 +1,7 @@
 <template>
   <div class="cryptoprice__wrapper" @click="onClick">
-    <div class="cryptoprice__selected">1 {{ salected.altcoin }}</div>
-    <div class="cryptoprice__quantity">{{ salected.price }} MXN</div>
+    <div class="cryptoprice__selected">1 {{ altcoinData.altcoin }}</div>
+    <div class="cryptoprice__quantity">{{ altcoinData.price }} MXN</div>
   </div>
 </template>
 <script>
@@ -9,16 +9,14 @@ export default {
   name: "Cryptoprice",
 
   props: {
-    altcoins: {
-      type: Array,
-    },
-    salected: {
+    altcoinData: {
       type: Object,
+      default: null,
     },
   },
 
   mounted() {
-    this.salected;
+    this.altcoinData;
   },
 
   methods: {
