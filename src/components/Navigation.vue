@@ -6,6 +6,7 @@
           :class="'navigation__wrapper ' + ui"
           v-for="item in itemsList"
           :key="item.id"
+          @click="itemClick"
         >
           <a :href="'#'+item.pathName" :class="'navigation__item ' + ui">{{
             item.value

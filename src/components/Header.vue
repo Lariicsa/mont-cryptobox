@@ -54,6 +54,7 @@ export default {
 
     hidePricesOnBlur(){
       this.showAltcoins = false
+      this.isMenuOpen = false
     }
   },
 };
