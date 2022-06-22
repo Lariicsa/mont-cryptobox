@@ -107,6 +107,7 @@ export default {
 
   branches: [
     {
+      id: 1,
       slug: "delvalle",
       branchname: "Fantástico del valle",
       installation: "13 Diciembre 2018",
@@ -121,6 +122,7 @@ export default {
         "!1m18!1m12!1m3!1d3763.9607761673537!2d-99.16887974953805!3d19.370850986855274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ffbd6c33266d%3A0xe73f356a90f47ffb!2sFant%C3%A1stico%20Comics!5e0!3m2!1ses-419!2smx!4v1593543335266!5m2!1ses-419!2smx",
     },
     {
+      id: 2,
       slug: "gdl",
       branchname: "Fantástico Guadalajara",
       installation: "14 Diciembre 2018",
@@ -135,6 +137,7 @@ export default {
         "!1m18!1m12!1m3!1d3732.8622766251556!2d-103.37541184951688!3d20.67518138612324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ae0fd555190f%3A0x317159b52bd22b88!2sFantastico%20Guadalajara!5e0!3m2!1ses-419!2smx!4v1593543505581!5m2!1ses-419!2smx",
     },
     {
+      id: 3,
       slug: "mty",
       branchname: "Comicastle Monterrey",
       installation: "15 Diciembre 2018",
@@ -150,6 +153,7 @@ export default {
     },
 
     {
+      id: 4,
       slug: "qro",
       branchname: "Comicastle Querétaro",
       installation: "16 Diciembre 2018",
@@ -164,6 +168,7 @@ export default {
         "!1m18!1m12!1m3!1d29881.888174735068!2d-100.41542838878156!3d20.578416815283852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d35b316aaaaaab%3A0xaa46db46fea9b1d1!2sComicastle!5e0!3m2!1ses-419!2smx!4v1593543397203!5m2!1ses-419!2smx",
     },
     {
+      id: 5,
       slug: "satelite",
       branchname: "Fantástico Satélite",
       installation: "17 Diciembre 2018",

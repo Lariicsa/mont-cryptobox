@@ -63,6 +63,7 @@ import CardlistAction from "@/components/CardlistAction";
 import Cardlist from "@/components/CardList";
 import Commoncontent from "@/components/CommonContent";
 import Datitle from "@/components/Titles";
+import Dropselect from "@/components/Dropselect";
 import Footer from "@/components/Footer";
 import Form from "@/components/Form";
 import Grid from "@/components/Grid";
@@ -72,8 +73,6 @@ import Icontext from "@/components/IconText";
 import Maps from "@/components/Maps";
 import DATA from "../data";
 
-import Dropselect from "@/components/Dropselect.vue";
-
 export default {
   name: "HomeView",
 
@@ -82,6 +81,7 @@ export default {
     Cardlist,
     Commoncontent,
     Datitle,
+    Dropselect,
     Footer,
     Form,
     Grid,
@@ -89,8 +89,6 @@ export default {
     HeroImage,
     Icontext,
     Maps,
-
-    Dropselect,
   },
 
   data() {
@@ -110,22 +108,13 @@ export default {
       socket: null,
       btcData: null,
 
-      muckBranch: "",
+      muckBranch: "delvalle",
     };
   },
 
-  // created() {
-  //   const BTC_DATA = { action: "SUBSCRIBE", market: "btc_mxn" };
-  //   this.socket = new WebSocket("ws://localhost:9001/ws");
-  //   this.socket.onopen = () => {
-  //     this.status = "connected";
-  //     this.socket.send(JSON.stringify(BTC_DATA));
-  //     this.socket.onmessage = (event) => {
-  //       console.log(event.data);
-  //       this.btcData = JSON.parse(event.data);
-  //     };
-  //   };
-  // },
+  mounted() {
+    this.setBranchData;
+  },
 
   mounted() {
     this.branchesList;
@@ -138,7 +127,6 @@ export default {
 
     setBranchData(data) {
       const DROP_OPTION = data;
-
       switch (DROP_OPTION) {
         case "delvalle":
           this.currentBranch = this.branchesListFormatted[0];
@@ -159,8 +147,6 @@ export default {
           this.currentBranch = this.branchesListFormatted[0];
           break;
       }
-
-      console.log("data", data);
     },
   },
 
