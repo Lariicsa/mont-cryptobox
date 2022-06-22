@@ -1,7 +1,11 @@
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 2.4rem 0;
   position: relative;
   z-index: 4;
+  width: 100%;
   max-width:$maxwidth-inner-containner;
 
   @include from(1140px) {

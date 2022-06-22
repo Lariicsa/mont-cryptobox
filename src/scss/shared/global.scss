@@ -73,6 +73,9 @@ h3 {
   flex-wrap: wrap;
   &__main {
     @extend .container;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     width: 94%;
   }
   &__inner {
