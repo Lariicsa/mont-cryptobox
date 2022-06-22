@@ -8,6 +8,7 @@
       <li
         v-for="branch in dropdata"
         class="actionlist__item"
+        :class="itemSelected === branch.slug ? 'selected' : ''"
         :key="branch.slug"
         @click="onClick(branch)"
       >
@@ -23,6 +24,10 @@ export default {
   props: {
     dropdata: {
       type: Array,
+    },
+    itemSelected: {
+      type: String,
+      default: "",
     },
   },
 

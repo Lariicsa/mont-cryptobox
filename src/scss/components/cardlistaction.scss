@@ -81,5 +81,15 @@
         @include icon("wave-mini", $sunglow);
       }
     }
+
+    &.selected {
+      color: $sunglow;
+      &:hover{
+        pointer-events: none;
+      }
+      &:before {
+        @include icon("wave-mini", $sunglow);
+      }
+    }
   }
 }

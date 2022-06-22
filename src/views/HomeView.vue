@@ -42,7 +42,7 @@
           />
         </template>
         <template v-slot:card-slot>
-          <CardlistAction :dropdata="branchesData" @onClick="getBranchData" />
+          <CardlistAction :dropdata="branchesData" :itemSelected="muckBranch" @onClick="getBranchData" />
         </template>
       </Maps>
     </div>
