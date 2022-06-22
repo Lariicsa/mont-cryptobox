@@ -28,19 +28,23 @@
     </div>
 
     <div id="cajeros" class="row right globalmargin">
-      <Dropselect
-        v-model="muckBranch"
-        variant="normal"
-        :options="branchesListFormatted"
-        name="branches"
-        @onChange="setBranchData(muckBranch)"
-      />
       <Maps
         :mapData="currentBranch"
         @onChangeDrop="setBranchData(currentBranch)"
       >
-        <CardlistAction :dropdata="branchesData" @onClick="getBranchData"
-      /></Maps>
+        <template v-slot:drop-slot>
+          <Dropselect
+            v-model="muckBranch"
+            variant="normal"
+            :options="branchesListFormatted"
+            name="branches"
+            @onChange="setBranchData(muckBranch)"
+          />
+        </template>
+        <template v-slot:card-slot>
+          <CardlistAction :dropdata="branchesData" @onClick="getBranchData" />
+        </template>
+      </Maps>
     </div>
     <div class="row between globalmargin">
       <Form
@@ -167,26 +171,6 @@ export default {
       });
       return branches;
     },
-
-    // btcWSprice() {
-    //   let WS_DATA = this.btcData.btc_mxn.spot;
-    //   const DATA = {
-    //     altcoin: "Bitcoin",
-    //     price: WS_DATA,
-    //     value: "bitcoin",
-    //   };
-    //   return DATA;
-    // },
-
-    // dropOption: {
-    //   get() {
-    //     return this.currentBranch;
-    //   },
-
-    //   set(newValue) {
-    //     this.currentBranch = newValue;
-    //   },
-    // },
   },
 };
 </script>

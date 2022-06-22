@@ -9,13 +9,17 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   font-size: $regular-size + 0.2;
-  text-align: left;
+  text-align: center;
   color: $white-neutral;
   font-weight: $semibold;
   width: 100%;
-  min-width: 8rem;
-  height: 4rem;
+  min-width: 8.2rem;
+  height: 4.4rem;
   position: relative;
+
+  @include from($tablet) {
+    cursor: pointer;
+  }
 
   &:focus {
     outline: 0;
@@ -41,75 +45,6 @@
       width: 1.2rem;
       pointer-events: none;
     }
-  }
-
-  option {
-    pointer-events: none;
-  }
-}
-
-
-.dropdown {
-  border: none;
-  background-color: transparent;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 0 0 0 1.2rem;
-  border-radius: 0.2rem;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  font-size: 1.6rem;
-  text-align: left;
-  color: $white-neutral;
-  font-weight: 500;
-  width: 100%;
-  min-width: 8.2rem;
-  height: 4.4rem;
-  position: relative;
-
-  @include from($tablet) {
-    cursor: pointer;
-  }
-
-  &:focus {
-    outline: 0;
-  }
-
-  &.min {
-    height: 3.8rem;
-  }
-
-  &__wrapper {
-    border: 0.2rem solid $neutral-grey;
-    position: relative;
-    width: 100%;
-
-    &:after {
-      @include icon("triangle",$neutral-grey);
-      background-size: contain;
-      content: "";
-      position: absolute;
-      top: 1.8rem;
-      right: 1.6rem;
-      height: 1rem;
-      width: 1.2rem;
-      pointer-events: none;
-    }
-    &.error {
-      border: 0.1rem solid tomato;
-      color: tomato;
-    }
-
-    &.small {
-      &:after {
-        top: 1.2rem;
-        @include mobile {
-          top: 1.6rem;
-        }
-      }
-    }
-
 
     &:hover {
       @include from($tablet) {
@@ -121,86 +56,4 @@
   option {
     pointer-events: none;
   }
-
 }
-
-// .select {
-//   border: 0.2rem solid $pale-grey-two;
-//   background-color: $white;
-//   display: flex;
-//   padding: 0;
-//   text-indent: 3.2rem;
-//   border-radius: 0.2rem;
-//   -webkit-appearance: none;
-//   font-size: $regular-size;
-//   text-align: center;
-//   color: $blackio;
-//   font-weight: $semibold;
-//   width: 100%;
-//   min-width: 8.2rem;
-//   height: 4.4rem;
-//   position: relative;
-//   &:hover {
-//     border: 0.1rem solid $aqua-blue;
-//     cursor: pointer;
-//   }
-//   &:focus {
-//     border: 0.1rem solid $grey-base;
-//     border-right: none;
-//     border-left: none;
-//   }
-//   &__wrapper {
-//     border: 0.2rem solid $pale-grey-two;
-//     position: relative;
-//     width: 100%;
-
-//     @include from($tablet) {
-//       cursor: pointer;
-//     }
-
-//     & > label {
-//       font-size: $regular-size;
-//       color: $blackio;
-//       transform-origin: left;
-//       transition: transform 0.2s ease-in-out;
-//       will-change: transform;
-//       position: absolute;
-//       top: 1.4rem;
-//       left: 1rem;
-//       cursor: text;
-//       pointer-events: none;
-//       z-index: 2;
-//       &.picked {
-//         transform: scale(0.7) translateY(-1.6rem);
-//         text-transform: uppercase;
-//         top: -0.4rem;
-//         left: 0;
-//       }
-//     }
-//     &.error {
-//       border: 0.1rem solid $tomato;
-//       color: $tomato;
-//     }
-//   }
-
-//   &__wrapper {
-//     border: 0.2rem solid $pale-grey-two;
-//     position: relative;
-//     width: 100%;
-//     @include from($tablet) {
-//       cursor: pointer;
-//     }
-
-//     &:after {
-//       @include icon("triangle", $greyish-blue);
-//       background-size: contain;
-//       content: "";
-//       position: absolute;
-//       top: 1.8rem;
-//       right: 1.6rem;
-//       height: 1rem;
-//       width: 1.2rem;
-//       pointer-events: none;
-//     }
-//   }
-// }

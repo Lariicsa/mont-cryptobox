@@ -1,8 +1,8 @@
 <template>
-  <div class="dropdown__wrapper" :class="variant">
-    <label :class="selected ? 'filled' : ''">{{ phName }}</label>
+  <div class="dropselect__wrapper" :class="variant">
+    <!-- <label :class="selected ? 'filled' : ''">{{ phName }}</label> -->
     <select
-      :class="'dropdown ' + variant"
+      :class="'dropselect ' + variant"
       :name="name"
       v-model="selected"
       @change="onChange($event.target.value)"
@@ -28,7 +28,7 @@ export default {
     onChange(value) {
       this.$emit("input", value);
       this.$emit("onChange");
-      console.log('value', value);
+      console.log("value", value);
     },
   },
 

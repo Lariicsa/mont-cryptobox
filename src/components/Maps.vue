@@ -5,13 +5,7 @@
       <div class="actionlist__subtitle">
         Ubica tu cajero dentro de nuestra red
       </div>
-      <Dropselect
-        v-model="dropselectModel"
-        phName="placeholder"
-        :options="dropOptions"
-        :name="dropName"
-        @onChange="onChangeDrop(dropselectModel)"
-      />
+  <slot name="drop-slot"></slot>
     </div>
     <div class="maps__top">
       <div class="maps__info address">{{ mapData.address }}</div>
@@ -44,7 +38,7 @@
       <div class="maps__info">{{ mapData.altcoins }}</div>
     </div>
     <div class="maps__select">
-      <slot></slot>
+      <slot name="card-slot"></slot>
     </div>
   </div>
 </template>
