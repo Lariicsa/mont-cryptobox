@@ -1,12 +1,13 @@
 <template>
-  <div class="dropselect__wrapper">
+  <div class="dropdown__wrapper" :class="variant">
+    <label :class="selected ? 'filled' : ''">{{ phName }}</label>
     <select
-      class="dropselect"
+      :class="'dropdown ' + variant"
       :name="name"
       v-model="selected"
       @change="onChange($event.target.value)"
     >
-      <option v-if="selected" value="">{{ selected ? selected.text : "" }}</option>
+      <!-- <option v-if="selected" value="">{{ selected ? "selected" : "" }}</option> -->
       <option
         v-for="option in options"
         :value="option.value"
@@ -21,13 +22,13 @@
 export default {
   name: "Dropselect",
 
-  props: ["id", "options", "value", "name"],
+  props: ["id", "options", "value", "name", "variant", "phName"],
 
   methods: {
     onChange(value) {
       this.$emit("input", value);
       this.$emit("onChange");
-      console.log('ds', value);
+      console.log('value', value);
     },
   },
 

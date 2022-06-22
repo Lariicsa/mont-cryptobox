@@ -1,7 +1,6 @@
 <template>
   <!-- <Header :itemsList="topMenuList" /> -->
   <div class="container__inner">
-
     <div class="row globalmargin">
       <HeroImage :title="heroImageData.title" :text="heroImageData.text" />
       <Cardlist
@@ -29,12 +28,13 @@
     </div>
 
     <div id="cajeros" class="row right globalmargin">
-      <!-- <Dropselect
-        v-model="currentBranch"
+      <Dropselect
+        v-model="muckBranch"
+        variant="normal"
         :options="branchesListFormatted"
-        :name="currentBranch.text"
-        @onChange="setBranchData(currentBranch)"
-      /> -->
+        name="branches"
+        @onChange="setBranchData(muckBranch)"
+      />
       <Maps
         :mapData="currentBranch"
         @onChangeDrop="setBranchData(currentBranch)"
@@ -105,6 +105,8 @@ export default {
       listAlcoins: DATA.listCryptos,
       socket: null,
       btcData: null,
+
+      muckBranch: "",
     };
   },
 
