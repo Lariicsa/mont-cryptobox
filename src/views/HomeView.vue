@@ -34,15 +34,19 @@
       >
         <template v-slot:drop-slot>
           <Dropselect
-            v-model="muckBranch"
+            v-model="selectedBranch"
             variant="normal"
             :options="branchesListFormatted"
             name="branches"
-            @onChange="setBranchData(muckBranch)"
+            @onChange="setBranchData(selectedBranch)"
           />
         </template>
         <template v-slot:card-slot>
-          <CardlistAction :dropdata="branchesData" :itemSelected="muckBranch" @onClick="getBranchData" />
+          <CardlistAction
+            :dropdata="branchesData"
+            :itemSelected="currentBranch.slug"
+            @onClick="getBranchData"
+          />
         </template>
       </Maps>
     </div>
@@ -107,8 +111,7 @@ export default {
       listAlcoins: DATA.listCryptos,
       socket: null,
       btcData: null,
-
-      muckBranch: "delvalle",
+      selectedBranch: "delvalle",
     };
   },
 

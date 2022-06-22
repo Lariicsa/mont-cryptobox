@@ -24,7 +24,7 @@
         >
         </Inputfield>
 
-        <div class="row between">
+        <div class="row between xcenter">
           <div class="row md">
             <Inputfield
               phName="e-Mail:"
