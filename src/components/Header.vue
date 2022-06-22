@@ -3,7 +3,12 @@
   <div class="header">
     <a href="/" class="header__logo"></a>
     <div class="header__burger" @click="burgerClick"></div>
-    <Navigation ui="mobile" v-show="isMenuOpen" :itemsList="itemsList"  :priceData="priceData"/>
+    <Navigation
+      ui="mobile"
+      v-show="isMenuOpen"
+      :itemsList="itemsList"
+      :priceData="priceData"
+    />
     <div class="header__navigation">
       <Navigation
         :itemsList="itemsList"
@@ -48,12 +53,15 @@ export default {
       type: Object,
       default: null,
     },
+    listAlcoins: {
+      type: Array,
+    },
   },
 
   data() {
     return {
       isMenuOpen: false,
-      listAlcoins: DATA.listCryptos,
+
       showAltcoins: false,
     };
   },

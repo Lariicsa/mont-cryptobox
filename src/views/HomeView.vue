@@ -4,7 +4,7 @@
     <div class="row globalmargin">
       <HeroImage :title="heroImageData.title" :text="heroImageData.text" />
       <Cardlist
-        :altcoins="listAlcoins"
+        :altcoins="btcWsSellBuy"
         :isRelative="true"
         top="-2rem"
         right="0"
@@ -112,14 +112,38 @@ export default {
       socket: null,
       btcData: null,
       selectedBranch: "delvalle",
+      priceBuy: 0,
+      priceSell: 0,
+      // listCryptos: [
+      //   {
+      //     altcoin: "Bitcoin",
+      //     slug: "btc",
+      //     priceBuy: "Compra 78,638.68",
+      //     priceSell: "Venta 77,638.68",
+      //     btcData: null,
+      //   },
+      // ],
+    };
+  },
+
+  created() {
+    const BTC_DATA = { action: "SUBSCRIBE", market: "btc_mxn" };
+    this.socket = new WebSocket("ws://localhost:9001/ws");
+    this.socket.onopen = () => {
+      this.status = "connected";
+      this.socket.send(JSON.stringify(BTC_DATA));
+      this.socket.onmessage = (event) => {
+        console.log(event.data);
+        let PARSED = JSON.parse(event.data);
+        this.btcData = PARSED.btc_mxn;
+        this.priceBuy = PARSED.btc_mxn.buyAt;
+        this.priceSell = PARSED.btc_mxn.sellAt;
+      };
     };
   },
 
   mounted() {
     this.setBranchData;
-  },
-
-  mounted() {
     this.branchesList;
   },
 
@@ -159,6 +183,18 @@ export default {
         return { ...ele, value: ele.slug, text: ele.branchname };
       });
       return branches;
+    },
+
+    btcWsSellBuy() {
+      let WS_BUY = this.priceBuy;
+      let WS_SELL = this.priceSell;
+      const DATA = {
+        altcoin: "Bitcoin",
+        slug: "btc",
+        priceBuy: `Compra ${WS_BUY} MXN`,
+        priceSell: `Venta ${WS_SELL} MXN`,
+      };
+      return [DATA];
     },
   },
 };

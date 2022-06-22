@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="space">
     <div class="container__main">
-      <Header :itemsList="topMenuList" :priceData="btcWSpricer" />
+      <Header :itemsList="topMenuList" :priceData="btcWSpricer"  :listAlcoins="btcWsSellBuy"/>
       <router-view />
     </div>
   </div>
@@ -27,11 +27,8 @@ export default {
       socket: null,
       btcData: null,
       btcPrice: "",
-      btcWSprice: {
-        altcoin: "Bitcoin",
-        value: "bitcoin",
-        price: "578,638.68",
-      },
+      priceBuy: 0,
+      priceSell: 0,
     };
   },
 
@@ -46,6 +43,8 @@ export default {
         let PARSED = JSON.parse(event.data);
         this.btcData = PARSED;
         this.btcPrice = PARSED.btc_mxn.spot;
+        this.priceBuy = PARSED.btc_mxn.buyAt;
+        this.priceSell = PARSED.btc_mxn.sellAt;
       };
     };
   },
@@ -59,6 +58,18 @@ export default {
         value: "bitcoin",
       };
       return DATA;
+    },
+
+    btcWsSellBuy() {
+      let WS_BUY = this.priceBuy;
+      let WS_SELL = this.priceSell;
+      const DATA = {
+        altcoin: "Bitcoin",
+        slug: "btc",
+        priceBuy: `Compra ${WS_BUY} MXN`,
+        priceSell: `Venta ${WS_SELL} MXN`,
+      };
+      return [DATA];
     },
   },
 };
