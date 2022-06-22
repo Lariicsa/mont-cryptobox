@@ -21,7 +21,7 @@
     max-width: 54rem;
   }
 
-  @include mobile{
+  @include mobile {
     max-width: 32rem;
   }
   &__wrapper {
@@ -207,6 +207,7 @@
 
     @include until($tablet-landscape) {
       display: flex;
+      padding: 0 1.2rem;
     }
   }
 }
