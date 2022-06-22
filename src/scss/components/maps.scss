@@ -1,5 +1,6 @@
 .maps {
   background-color: transparent;
+  border-radius: $radius;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,9 +20,10 @@
     max-width: 92%;
     min-height: 40rem;
     max-width: 54rem;
+    overflow: hidden;
   }
 
-  @include mobile {
+  @include until($mobile-low) {
     max-width: 32rem;
   }
   &__wrapper {
