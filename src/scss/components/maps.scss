@@ -20,6 +20,10 @@
     min-height: 40rem;
     max-width: 54rem;
   }
+
+  @include mobile{
+    max-width: 32rem;
+  }
   &__wrapper {
     background-color: $white-neutral;
     border-radius: 1.6rem;
@@ -57,9 +61,6 @@
     justify-content: center;
     align-items: center;
     padding: 1.6rem;
-    @include until($tablet-landscape) {
-      //display: none;
-    }
   }
 
   &__top {
@@ -135,6 +136,7 @@
     position: relative;
     @include until($tablet-landscape) {
       color: $white-neutral;
+      padding: 0;
     }
 
     &:before {
