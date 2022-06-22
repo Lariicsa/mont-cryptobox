@@ -8,12 +8,14 @@
       v-show="isMenuOpen"
       :itemsList="itemsList"
       :priceData="priceData"
+      @itemClick="navItemClick"
     />
     <div class="header__navigation">
       <Navigation
         :itemsList="itemsList"
         @clickPrice="showPrices"
         :priceData="priceData"
+        :itemClick="navItemClick"
       />
       <Cardlist
         v-show="showAltcoins"
@@ -76,6 +78,10 @@ export default {
 
     hidePricesOnBlur() {
       this.showAltcoins = false;
+      this.isMenuOpen = false;
+    },
+
+    navItemClick() {
       this.isMenuOpen = false;
     },
   },

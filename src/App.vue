@@ -1,7 +1,11 @@
 <template>
   <div id="app" class="space">
     <div class="container__main">
-      <Header :itemsList="topMenuList" :priceData="btcWSpricer"  :listAlcoins="btcWsSellBuy"/>
+      <Header
+        :itemsList="topMenuList"
+        :priceData="btcWSpricer"
+        :listAlcoins="btcWsSellBuy"
+      />
       <router-view />
     </div>
   </div>

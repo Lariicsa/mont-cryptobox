@@ -114,15 +114,6 @@ export default {
       selectedBranch: "delvalle",
       priceBuy: 0,
       priceSell: 0,
-      // listCryptos: [
-      //   {
-      //     altcoin: "Bitcoin",
-      //     slug: "btc",
-      //     priceBuy: "Compra 78,638.68",
-      //     priceSell: "Venta 77,638.68",
-      //     btcData: null,
-      //   },
-      // ],
     };
   },
 

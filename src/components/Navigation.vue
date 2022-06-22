@@ -6,11 +6,13 @@
           :class="'navigation__wrapper ' + ui"
           v-for="item in itemsList"
           :key="item.id"
-          @click="itemClick"
         >
-          <a :href="'#' + item.pathName" :class="'navigation__item ' + ui">{{
-            item.value
-          }}</a>
+          <a
+            :href="'#' + item.pathName"
+            :class="'navigation__item ' + ui"
+            @click="itemClick"
+            >{{ item.value }}</a
+          >
 
           <ul v-if="hasSubmenues" :class="'navigation__sublist ' + ui">
             <li v-for="subitem in item.subMenues" :key="subitem.id">
