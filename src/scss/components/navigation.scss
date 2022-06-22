@@ -35,6 +35,9 @@
       flex-direction: column;
       align-items: center;
       padding: 2.4rem;
+      @include from($tablet) {
+        display: none;
+      }
     }
   }
 
