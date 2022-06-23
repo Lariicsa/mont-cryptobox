@@ -74,7 +74,7 @@
     padding: 0 2.4rem;
     margin: 0 auto;
     position: relative;
-    width: calc(100% - 14.8rem);
+    width: calc(100% - 8.8rem);
     height: 12.4rem;
 
     @include until($tablet-landscape) {
@@ -195,6 +195,9 @@
     top: 5.6rem;
     @include until($tablet-landscape) {
       display: none;
+    }
+    &.onmap {
+      z-index: -1;
     }
   }
 

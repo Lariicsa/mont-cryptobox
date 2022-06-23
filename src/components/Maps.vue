@@ -5,7 +5,7 @@
       <div class="actionlist__subtitle">
         Ubica tu cajero dentro de nuestra red
       </div>
-  <slot name="drop-slot"></slot>
+      <slot name="drop-slot"></slot>
     </div>
     <div class="maps__top">
       <div class="maps__info address">{{ mapData.address }}</div>
@@ -17,7 +17,7 @@
       <div class="maps__head hideIndesktop">criptomonedas</div>
       <div class="maps__info hideIndesktop">{{ mapData.altcoins }}</div>
     </div>
-    <div class="maps">
+    <div class="maps" @mouseenter="setIndexClass" @mouseleave="unsetIndexClass">
       <iframe
         :src="mapsBasePath + mapData.mapurl"
         id="gmap_canvas"
@@ -37,7 +37,7 @@
       <div class="maps__info" v-html="pricesInfo"></div>
       <div class="maps__info">{{ mapData.altcoins }}</div>
     </div>
-    <div class="maps__select">
+    <div class="maps__select" :class="{ onmap: isOnMap }">
       <slot name="card-slot"></slot>
     </div>
   </div>
@@ -68,6 +68,7 @@ export default {
   data() {
     return {
       mapsBasePath: "https://www.google.com/maps/embed?pb=",
+      isOnMap: false,
     };
   },
 
@@ -84,6 +85,13 @@ export default {
   methods: {
     onChangeDrop(data) {
       this.$emit("onChangeDrop", data);
+    },
+
+    setIndexClass() {
+      this.isOnMap = true;
+    },
+    unsetIndexClass() {
+      this.isOnMap = false;
     },
   },
 };
