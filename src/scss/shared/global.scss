@@ -30,6 +30,7 @@ h1 {
   font-size: $big-title-size;
   line-height: $big-title-size + $global-rythm;
   @include until($tablet-landscape) {
+    text-align: center;
     font-size: $regular-title-size;
     line-height: $big-title-size - $global-rythm;
   }
@@ -39,6 +40,7 @@ h2 {
   font-size: $regular-title-size;
   line-height: $big-title-size + $global-rythm;
   @include until($tablet-landscape) {
+    text-align: center;
     font-size: $small-title-size;
     line-height: $medium-size + 2rem;
   }

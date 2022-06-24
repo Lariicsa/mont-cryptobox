@@ -4,6 +4,7 @@
   align-items: center;
   min-height: 64rem;
   width: 100%;
+  overflow: hidden;
 
   @include until($tablet-landscape) {
     flex-direction: column;
@@ -20,6 +21,9 @@
     font-size: $regular-size;
     line-height: $regular-size + $global-rythm;
     font-weight: $regular;
+    @include until($tablet-landscape) {
+      text-align: center;
+    }
   }
   &__image {
     background-image: url("/public/heroimage-right.png");
