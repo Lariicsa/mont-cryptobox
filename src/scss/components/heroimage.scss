@@ -16,6 +16,7 @@
   }
 
   &__text {
+    margin: 2.4rem 0;
     font-size: $regular-size;
     line-height: $regular-size + $global-rythm;
     font-weight: $regular;
@@ -42,15 +43,13 @@
 
 canvas {
   position: absolute;
-  top: 8%; 
+  top: 8%;
   right: 50%;
-  margin: -24.5rem -45rem auto auto; 
+  margin: -24.5rem -45rem auto auto;
   max-width: 100%;
   height: auto;
   z-index: 0;
   @include tablet {
-    margin: -24.5rem -15rem auto auto; 
+    margin: -24.5rem -15rem auto auto;
   }
 }
-
-

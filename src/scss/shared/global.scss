@@ -85,7 +85,7 @@ h3 {
     @extend .container;
     max-width: $maxwidth-inner-containner;
     @include until($tablet-landscape) {
-      padding: 0 1.2rem;
+      padding: 0 3.2rem;
     }
   }
 }
@@ -129,6 +129,11 @@ h3 {
 
   &.globalmargin {
     margin: 4rem 0;
+    &.extratop {
+      @include until($tablet-landscape) {
+        margin: 16rem 0;
+      }
+    }
   }
 }
 

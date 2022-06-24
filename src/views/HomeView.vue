@@ -10,7 +10,7 @@
         right="0"
       />
     </div>
-    <div class="row globalmargin">
+    <div class="row globalmargin extratop">
       <div class="grid__container cols4">
         <Icontext
           v-for="item in icons"
