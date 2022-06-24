@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="space">
+  <div id="app" class="space bgdegree">
       <router-view />
   
   </div>
