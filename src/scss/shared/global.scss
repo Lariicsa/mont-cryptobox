@@ -78,6 +78,7 @@ h3 {
     align-items: center;
     width: 94%;
     @include tablet {
+      padding: 2.4rem;
       width: 100%;
     }
   }
@@ -130,7 +131,7 @@ h3 {
   &.globalmargin {
     margin: 4rem 0;
     &.extratop {
-      @include until($tablet-landscape) {
+      @include from($tablet-landscape) {
         margin: 16rem 0;
       }
     }

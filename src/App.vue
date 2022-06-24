@@ -1,13 +1,13 @@
 <template>
   <div id="app" class="space">
-    <div class="container__main">
-      <Header
+   
+      <!-- <Header
         :itemsList="topMenuList"
         :priceData="btcWSpricer"
         :listAlcoins="btcWsSellBuy"
-      />
+      /> -->
       <router-view />
-    </div>
+  
   </div>
 </template> 
 <script>
