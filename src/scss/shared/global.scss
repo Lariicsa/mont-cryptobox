@@ -24,13 +24,15 @@ h2,
 h3 {
   font-weight: $bold;
   margin: 0.8rem 0;
+  @include until($tablet-landscape) {
+    text-align: center;
+  }
 }
 
 h1 {
   font-size: $big-title-size;
   line-height: $big-title-size + $global-rythm;
   @include until($tablet-landscape) {
-    text-align: center;
     font-size: $regular-title-size;
     line-height: $big-title-size - $global-rythm;
   }
@@ -40,7 +42,6 @@ h2 {
   font-size: $regular-title-size;
   line-height: $big-title-size + $global-rythm;
   @include until($tablet-landscape) {
-    text-align: center;
     font-size: $small-title-size;
     line-height: $medium-size + 2rem;
   }
@@ -79,16 +80,18 @@ h3 {
     justify-content: space-between;
     align-items: center;
     width: 94%;
+    overflow: hidden;
     @include tablet {
-      padding: 2.4rem;
+      padding: 0.8rem;
       width: 100%;
     }
   }
   &__inner {
     @extend .container;
     max-width: $maxwidth-inner-containner;
+    overflow: hidden;
     @include until($tablet-landscape) {
-      padding: 0 3.2rem;
+      padding: 0 1.2rem;
     }
   }
 }

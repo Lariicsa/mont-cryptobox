@@ -6,10 +6,13 @@
   position: relative;
   z-index: 4;
   width: 100%;
-  max-width:$maxwidth-inner-containner;
+  max-width: $maxwidth-inner-containner;
 
   @include from(1140px) {
-    max-width:$maxwidth-containner;
+    max-width: $maxwidth-containner;
+  }
+  @include until($tablet-landscape) {
+    padding: 0 3.2rem;
   }
   &__logo {
     @include icon-logo;
@@ -29,7 +32,6 @@
     width: 4rem;
     height: 4rem;
     @include mobile {
-
       display: flex;
     }
   }

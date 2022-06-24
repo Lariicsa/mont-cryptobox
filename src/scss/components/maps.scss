@@ -1,5 +1,4 @@
 .maps {
-  background-color: transparent;
   border-radius: $radius;
   display: flex;
   flex-direction: column;
@@ -23,9 +22,13 @@
     overflow: hidden;
   }
 
-  @include until($mobile-low) {
-    max-width: 32rem;
+  @include until($mobile) {
+    max-width: 31rem;
   }
+  @include until($mobile-low) {
+    max-width: 30rem;
+  }
+
   &__wrapper {
     background-color: $white-neutral;
     border-radius: 1.6rem;
@@ -54,6 +57,10 @@
       min-height: 90vh;
       width: 100%;
       max-width: 100%;
+    }
+
+    @include until($mobile) {
+     min-height: 100vh;
     }
   }
 
