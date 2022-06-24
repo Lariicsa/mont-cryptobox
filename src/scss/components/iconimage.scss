@@ -8,6 +8,14 @@
   min-height: 21.6rem;
   width: 100%;
 
+  &:hover {
+    @include from($tablet-landscape) {
+      cursor: pointer;
+      animation: shimmy 1s infinite;
+      animation-direction: alternate;
+    }
+  }
+
   @include until($tablet-landscape) {
     justify-content: space-evenly;
     padding: 2.6rem;
@@ -36,5 +44,14 @@
     font-size: $regular-size;
     line-height: $regular-size + $global-rythm;
     font-weight: $regular;
+  }
+}
+
+@keyframes shimmy {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, -3.2rem);
   }
 }

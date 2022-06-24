@@ -32,7 +32,7 @@
         </Commoncontent>
       </div>
 
-      <div id="cajeros" class="row right globalmargin">
+      <div id="cajeros" class="row right globalmargin extratop">
         <Maps
           :mapData="currentBranch"
           @onChangeDrop="setBranchData(currentBranch)"
