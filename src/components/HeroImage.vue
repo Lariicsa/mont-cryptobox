@@ -1,5 +1,6 @@
 <template>
-  <div id="heroImage" class="heroimage">
+  <div class="heroimage">
+    <canvas id="heroImage"></canvas>
     <div class="column heroimage__content">
       <h1 class="heroimage__title">{{ title }}</h1>
       <p class="heroimage__text" v-html="text"></p>
@@ -9,7 +10,6 @@
 </template>
 <script>
 //import WAVE from "../utils/index";
-import HeroImage from "@/components/HeroImage";
 export default {
   name: "HeroImage",
   props: {
@@ -22,86 +22,52 @@ export default {
   },
 
   mounted() {
-    console.clear();
-    let HERO_IMAGE = document.querySelector("#heroImage");
-    let C_HEIGHT = HERO_IMAGE.offsetHeight;
-    let C_WIDTH = HERO_IMAGE.offsetWidth;
-    console.log(C_WIDTH);
-    var canvas = document.createElement("canvas"),
-      ctx = canvas.getContext("2d"),
-      width = (canvas.width = this.canvasWidth),
-      halfWidth = width / 8,
-      height = (canvas.height = 2000),
-      halfHeight = height / 2;
+    var c = document.getElementById("heroImage");
+    var $ = c.getContext("2d");
 
-    HERO_IMAGE.appendChild(canvas);
+    var w = (c.width = window.innerWidth);
+    var h = (c.height = window.innerHeight);
 
-    var lineCount = 16,
-      color = "#575c96",
-      offset = Math.PI * 1.6;
+    var draw = function (a, b, t) {
+      $.lineWidth = 0.2;
+      $.fillStyle = "hsla(277, 95%, 55%, 1)";
+      $.clearRect(0, 0, c.width, c.height);
+      for (var i = -60; i < 60; i += 1) {
+        $.strokeStyle = "hsl(265, 23%, 46%, 0.8)";
+        $.beginPath();
+        $.moveTo(0, h / 2);
+        for (var j = 0; j < w; j += 10) {
+          $.lineTo(
+            18 * Math.sin(i / 10) + j + 0.008 * j * j,
+            Math.floor(
+              h / 2 +
+                (j / 2) * Math.cos(j / 50 - t / 50 - i / 118) +
+                i * 0.9 * Math.sin(j / 25 - (i + t) / 65)
+            )
+          );
+        }
+        $.stroke();
+      }
+    };
+    var t = 0;
 
-    ctx.shadowBlur = 14;
-    ctx.shadowColor = color;
-    ctx.fillStyle = color;
-
-    function Line(pos) {
-      this.pos = pos;
-    }
-
-    Line.prototype = {
-      constructor: Line,
-      pos: -10,
-      width: halfWidth,
-      height: 4,
-      range: halfHeight * 0.9,
-
-      render: function (ctx, delta) {
-        var pos = this.pos;
-
-        var minWidth = this.width * 0.1;
-        var lineWidth = minWidth + this.width * 0.002 * pos;
-        var lineHeight = Math.sin(delta + pos * offset) * this.height;
-        var x = (width - minWidth) * (1 - pos);
-        var y =
-          Math.sin(delta + pos * offset) *
-            -(this.range / 2 - this.range * 2 * pos) +
-          halfHeight;
-        ctx.globalAlpha = 0.4 + 0.64 * (1 - pos);
-        ctx.beginPath();
-        ctx.rect(x, y, lineWidth, lineHeight);
-        ctx.quadraticCurveTo(x + 1, y + 10, lineWidth, lineHeight);
-
-        ctx.closePath();
-        ctx.fill();
+    window.addEventListener(
+      "resize",
+      function () {
+        c.width = w = window.innerWidth;
+        c.height = h = window.innerHeight;
+        // $.fillStyle = "hsla(277, 95%, 55%, 1)";
       },
+      false
+    );
+
+    var run = function () {
+      window.requestAnimationFrame(run);
+      t += 4;
+      draw(33, 52 * Math.sin(t / 1400), t);
     };
 
-    var lines = [];
-
-    for (var i = 0; i < lineCount; i++) {
-      lines.push(new Line(i / lineCount));
-    }
-
-    var wave = 0;
-
-    function render() {
-      requestAnimationFrame(render);
-      wave += 0.006;
-
-      ctx.clearRect(0, 0, width, height);
-      lines.forEach(function (line) {
-        line.render(ctx, wave);
-      });
-    }
-
-    render();
-  },
-
-  computed: {
-    canvasWidth() {
-      let HERO_IMAGE = document.querySelector("#heroImage");
-      return HERO_IMAGE.offsetHeight * 10;
-    },
+    run();
   },
 };
 </script>

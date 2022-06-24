@@ -1,80 +1,150 @@
 console.clear();
-var canvas = document.createElement("canvas"),
-  ctx = canvas.getContext("2d"),
-  width = (canvas.width = 1000),
-  halfWidth = width / 5,
-  height = (canvas.height = 450),
-  halfHeight = height / 2;
+var canvas = document.createElement("canvas");
+//ctx = c.getContext("2d"),
+// width = (c.width = 1000),
+// halfWidth = width / 5,
+// height = (c.height = 450),
+// halfHeight = height / 2;
 
 document.body.appendChild(canvas);
+window.requestAnimFrame = (function () {
+  return (
+    window.requestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    window.mozRequestAnimationFrame ||
+    window.oRequestAnimationFrame ||
+    window.msRequestAnimationFrame ||
+    function (/* function */ callback) {
+     // window.setTimeout(callback, 1000 / 50);
+    }
+  );
+})();
 
-var lineCount = 16,
-  color = "#575c96",
-  offset = Math.PI * 1.6;
 
-ctx.shadowBlur = 4;
-ctx.shadowColor = color;
-ctx.fillStyle = color;
+var context = canvas.getContext("2d");
 
+//get DPI
+let dpi = window.devicePixelRatio || 6;
+context.scale(dpi, dpi);
+console.log(dpi);
 
-function Line(pos) {
-  this.pos = pos;
+function fix_dpi() {
+  //get CSS height
+  //the + prefix casts it to an integer
+  //the slice method gets rid of "px"
+  let style_height = +getComputedStyle(canvas)
+    .getPropertyValue("height")
+    .slice(0, -2);
+  let style_width = +getComputedStyle(canvas)
+    .getPropertyValue("width")
+    .slice(0, -2);
+
+  //scale the canvas
+  canvas.setAttribute("height", style_height * dpi);
+  canvas.setAttribute("width", style_width * dpi);
 }
 
-Line.prototype = {
-  constructor: Line,
-  pos: -10,
-  width: halfWidth,
-  height: 4,
-  range: halfHeight * 0.5,
+var particle_count = 70,
+  particles = [],
+  couleurs = ["#3a0088", "#930077", "#f2f7f7", "#ffc835"];
+function Particle() {
+  this.radius = Math.round(Math.random() * 3 + 5);
+  this.x = Math.floor(
+    Math.random() *
+      (+getComputedStyle(canvas).getPropertyValue("width").slice(0, -2) * dpi -
+        this.radius +
+        1) +
+      this.radius
+  );
+  this.y = Math.floor(
+    Math.random() *
+      (+getComputedStyle(canvas).getPropertyValue("height").slice(0, -2) * dpi -
+        this.radius +
+        1) +
+      this.radius
+  );
+  this.color = couleurs[Math.floor(Math.random() * couleurs.length)];
+  this.speedx = Math.round(Math.random() * 201 + 0) / 10;
+  this.speedy = Math.round(Math.random() * 201 + 0) / 10;
 
-  render: function (ctx, delta) {
-    var pos = this.pos;
-    
-    //delta < Math.PI ? Math.sin(delta * 0.5) : 1;
-    //Math.abs( Math.sin( delta + this.pos) ) ;
-    //this.pos;
-    //Math.sin(delta + (this.pos*Math.PI));
-    //  ( delta < Math.PI ? Math.sin(delta * 0.5) : 1);
-    //Math.abs( Math.sin( delta + this.pos) ) ;
+  switch (Math.round(Math.random() * couleurs.length)) {
+    case 1:
+      this.speedx *= 1;
+      this.speedy *= 1;
+      break;
+    case 2:
+      this.speedx *= -1;
+      this.speedy *= 1;
+      break;
+    case 3:
+      this.speedx *= 1;
+      this.speedy *= -1;
+      break;
+    case 4:
+      this.speedx *= -1;
+      this.speedy *= -1;
+      break;
+  }
 
-    var minWidth = this.width * 0.1;
-    //    var lineWidth = minWidth + this.width * 0.1 * pos;
-    var lineWidth = minWidth + this.width * 0.001 * pos;
-    var lineHeight = Math.cos(delta + pos * offset) * this.height;
-    var x = (width - minWidth) * (1 - pos);
-    var y =
-      Math.sin(delta + pos * offset) *
-        (this.range / 2 + (this.range / 2) * pos) +
-      halfHeight;
+  this.move = function () {
+    context.beginPath();
+    context.globalCompositeOperation = "source-over";
+    context.fillStyle = this.color;
+    context.globalAlpha = 1;
+    context.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+    context.fill();
+    context.closePath();
 
-    ctx.globalAlpha = 0.4 + 0.64 * (1 - pos);
-    ctx.beginPath();
-    ctx.rect(x, y, lineWidth, lineHeight);
-    ctx.quadraticCurveTo(x+2, y+10, lineWidth, lineHeight);
-  
+    this.x = this.x + this.speedx;
+    this.y = this.y + this.speedy;
 
-    ctx.closePath();
-    ctx.fill();
-  },
-};
+    if (this.x <= 0 + this.radius) {
+      this.speedx *= -1;
+    }
+    if (this.x >= canvas.width - this.radius) {
+      this.speedx *= -1;
+    }
+    if (this.y <= 0 + this.radius) {
+      this.speedy *= -1;
+    }
+    if (this.y >= canvas.height - this.radius) {
+      this.speedy *= -1;
+    }
 
-var lines = [];
+    for (var j = 0; j < particle_count; j++) {
+      var particleActuelle = particles[j],
+        yd = particleActuelle.y - this.y,
+        xd = particleActuelle.x - this.x,
+        d = Math.sqrt(xd * xd + yd * yd);
 
-for (var i = 0; i < lineCount; i++) {
-  lines.push(new Line(i / lineCount));
+      if (d < 200) {
+        context.beginPath();
+        context.globalAlpha = (200 - d) / (200 - 0);
+        context.globalCompositeOperation = "destination-over";
+        context.lineWidth = 1;
+        context.moveTo(this.x, this.y);
+        context.lineTo(particleActuelle.x, particleActuelle.y);
+        context.strokeStyle = this.color;
+        context.lineCap = "round";
+        context.stroke();
+        context.closePath();
+      }
+    }
+  };
+}
+for (var i = 0; i < particle_count; i++) {
+  fix_dpi();
+  var particle = new Particle();
+  particles.push(particle);
 }
 
-var wave = 0;
-
-function render() {
-  requestAnimationFrame(render);
-  wave += 0.008;
-
-  ctx.clearRect(0, 0, width, height);
-  lines.forEach(function (line) {
-    line.render(ctx, wave);
-  });
+function animate() {
+  fix_dpi();
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  for (var i = 0; i < particle_count; i++) {
+    particles[i].move();
+  }
+  requestAnimFrame(animate);
 }
 
-render();
+animate();
