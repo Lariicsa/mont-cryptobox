@@ -1,14 +1,14 @@
 console.clear();
 var canvas = document.createElement("canvas"),
   ctx = canvas.getContext("2d"),
-  width = (canvas.width =300),
+  width = (canvas.width = 1000),
   halfWidth = width / 5,
   height = (canvas.height = 450),
   halfHeight = height / 2;
 
 document.body.appendChild(canvas);
 
-var lineCount = 100,
+var lineCount = 16,
   color = "#575c96",
   offset = Math.PI * 1.6;
 
@@ -16,7 +16,6 @@ ctx.shadowBlur = 4;
 ctx.shadowColor = color;
 ctx.fillStyle = color;
 
-/*////////////////////////////////////////*/
 
 function Line(pos) {
   this.pos = pos;
@@ -24,13 +23,14 @@ function Line(pos) {
 
 Line.prototype = {
   constructor: Line,
-  pos: 0,
+  pos: -10,
   width: halfWidth,
-  height: 8,
-  range: halfHeight * 0.8,
+  height: 4,
+  range: halfHeight * 0.5,
 
   render: function (ctx, delta) {
     var pos = this.pos;
+    
     //delta < Math.PI ? Math.sin(delta * 0.5) : 1;
     //Math.abs( Math.sin( delta + this.pos) ) ;
     //this.pos;
@@ -40,7 +40,7 @@ Line.prototype = {
 
     var minWidth = this.width * 0.1;
     //    var lineWidth = minWidth + this.width * 0.1 * pos;
-    var lineWidth = minWidth + this.width * 0.0001 * pos;
+    var lineWidth = minWidth + this.width * 0.001 * pos;
     var lineHeight = Math.cos(delta + pos * offset) * this.height;
     var x = (width - minWidth) * (1 - pos);
     var y =
@@ -69,7 +69,7 @@ var wave = 0;
 
 function render() {
   requestAnimationFrame(render);
-  wave += 0.02;
+  wave += 0.008;
 
   ctx.clearRect(0, 0, width, height);
   lines.forEach(function (line) {

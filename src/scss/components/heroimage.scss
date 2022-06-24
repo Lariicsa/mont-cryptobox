@@ -44,11 +44,12 @@
 canvas {
   position: absolute;
   top: 8%;
-  right: 50%;
-  margin: -24.5rem -45rem auto auto;
+  left: 0%;
   max-width: 100%;
   height: auto;
   z-index: 0;
+  opacity: 0.6;
+  transform: skew(160deg, 183deg);;
   @include tablet {
     margin: -24.5rem -15rem auto auto;
   }
