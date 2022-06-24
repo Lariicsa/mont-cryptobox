@@ -1,6 +1,10 @@
 <template>
   <div class="container__main">
-    <Header :itemsList="topMenuList" />
+    <Header
+      :itemsList="topMenuList"
+      :priceData="btcWSpricer"
+      :listAlcoins="btcWsSellBuy"
+    />
     <div class="container__inner">
       <div class="row globalmargin">
         <HeroImage :title="heroImageData.title" :text="heroImageData.text" />
@@ -188,6 +192,16 @@ export default {
         priceSell: `Venta ${WS_SELL} MXN`,
       };
       return [DATA];
+    },
+
+    btcWSpricer() {
+      let WS_DATA = this.btcPrice;
+      const DATA = {
+        altcoin: "Bitcoin",
+        price: WS_DATA,
+        value: "bitcoin",
+      };
+      return DATA;
     },
   },
 };
