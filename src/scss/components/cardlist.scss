@@ -32,6 +32,7 @@
     max-width: 35rem;
     height: auto;
     position: absolute;
+    backdrop-filter: (20px);
 
     & > hr {
       background-color: $neutral-grey;
@@ -78,6 +79,7 @@
     height: 100%;
     width: auto;
     position: relative;
+    text-shadow: 0rem 0rem 1.6rem $black;
     &::before {
       content: "";
       background-color: $neutral-silver;
