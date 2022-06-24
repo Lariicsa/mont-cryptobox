@@ -63,8 +63,8 @@ export default {
 
     var run = function () {
       window.requestAnimationFrame(run);
-      t += 4;
-      draw(33, 52 * Math.sin(t / 1400), t);
+      t += 2;
+      draw(33, 52 * Math.sin(t / 1200), t);
     };
 
     run();

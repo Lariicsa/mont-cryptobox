@@ -25,6 +25,7 @@
     background-image: url("/public/heroimage-right.png");
     background-position: right center;
     background-repeat: no-repeat;
+    background-size: contain;
     width: 33%;
     height: 100%;
     @include until($tablet-landscape) {

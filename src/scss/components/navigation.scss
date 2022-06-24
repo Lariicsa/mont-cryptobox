@@ -103,12 +103,12 @@
       cursor: pointer;
       mask-image: linear-gradient(
         -75deg,
-        rgba(255, 255, 255, 0.8) 30%,
+        rgba(221, 193, 54, 0.6) 30%,
         #fff 50%,
         rgba(255, 255, 255, 0.8) 70%
       );
-      mask-size: 200%;
-      animation: shine 1s infinite;
+      mask-size: 240%;
+      animation: shine 1.8s infinite;
     }
     .is-active & {
       color: $accent;
