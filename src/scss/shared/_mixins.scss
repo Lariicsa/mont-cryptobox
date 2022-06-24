@@ -101,3 +101,14 @@
     @content;
   }
 }
+
+
+@keyframes shine {
+  from {
+    mask-position: 150%;
+  }
+
+  to {
+    mask-position: -50%;
+  }
+}

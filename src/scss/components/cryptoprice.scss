@@ -26,6 +26,14 @@
     &:hover {
       @include from($tablet-landscape) {
         cursor: pointer;
+        mask-image: linear-gradient(
+          -75deg,
+          rgba(255, 200, 53, 1) 30%,
+          #dfdacd 80%,
+          rgba(255, 200, 53, 0.9) 70%
+        );
+        mask-size: 300%;
+        animation: shine 2s infinite;
       }
     }
 
