@@ -74,15 +74,16 @@ h3 {
   width: 100%;
   min-width: 32rem;
   flex-wrap: wrap;
+  @include until(1420px) {
+    overflow: hidden;
+  }
   &__main {
     @extend .container;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     width: 94%;
-    @include until(1400px) {
-      overflow: hidden;
-    }
+   
     @include tablet {
       padding: 0.8rem;
       width: 100%;
