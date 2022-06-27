@@ -23,13 +23,6 @@
     overflow: hidden;
   }
 
-  // @include until($mobile) {
-  //   max-width: 31rem;
-  // }
-  // @include until($mobile-low) {
-  //   max-width: 30rem;
-  // }
-
   &__wrapper {
     background-color: $white-neutral;
     border-radius: 1.6rem;
@@ -119,7 +112,7 @@
     margin: 0 auto;
     color: $accent;
     font-size: $small-size;
-    line-height: $medium-size;
+    line-height: $medium-size + 0.2;
     text-align: center;
     &.hideIndesktop {
       display: none;
