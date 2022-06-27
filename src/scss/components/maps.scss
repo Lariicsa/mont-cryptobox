@@ -12,22 +12,23 @@
   top: 12.4rem;
 
   @include until($tablet-landscape) {
+    border-radius: $radius * 4;
     margin: 0 auto;
     position: relative;
     top: 0;
     left: auto;
     max-width: 92%;
     min-height: 40rem;
-    max-width: 54rem;
+    max-width: calc(100% - 3.2rem);
     overflow: hidden;
   }
 
-  @include until($mobile) {
-    max-width: 31rem;
-  }
-  @include until($mobile-low) {
-    max-width: 30rem;
-  }
+  // @include until($mobile) {
+  //   max-width: 31rem;
+  // }
+  // @include until($mobile-low) {
+  //   max-width: 30rem;
+  // }
 
   &__wrapper {
     background-color: $white-neutral;
