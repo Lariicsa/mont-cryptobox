@@ -60,7 +60,7 @@
     }
 
     @include until($mobile) {
-     min-height: 100vh;
+      min-height: 100vh;
     }
   }
 
@@ -73,22 +73,22 @@
   }
 
   &__top {
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
+    grid-template-columns: 30% 64%;
+    justify-content: flex-end;
     align-items: center;
     grid-column-gap: 0.8rem;
     grid-row-gap: 0;
-    padding: 0 2.4rem;
+    padding: 0;
     margin: 0 auto;
     position: relative;
-    width: calc(100% - 8.8rem);
+    width: calc(100% - 6.8rem);
     height: 12.4rem;
 
     @include until($tablet-landscape) {
       margin: 1.6rem auto;
       grid-template-columns: 1fr;
       grid-column-gap: 0;
-      grid-row-gap: 1.6rem;
+      grid-row-gap: 0.8rem;
       height: auto;
       width: 100%;
     }
@@ -132,20 +132,34 @@
     color: $accent;
     text-transform: uppercase;
     justify-content: flex-end;
+
     @include until($tablet-landscape) {
       color: $sunglow;
+    }
+    &.hideIndesktop {
+      @include until($tablet-landscape) {
+        margin-top: 1.6rem;
+      }
     }
   }
 
   &__info {
     color: $black;
-    padding-left: 3.2rem;
+    padding-top: 2.8rem;
     width: auto;
     height: auto;
     position: relative;
+    &.hideIndesktop {
+      &:before {
+        display: none;
+      }
+      @include until($tablet-landscape) {
+        padding-top: 0;
+      }
+    }
+
     @include until($tablet-landscape) {
       color: $white-neutral;
-      padding: 0;
     }
 
     &:before {
@@ -154,33 +168,20 @@
       height: 2rem;
       background-size: contain;
       position: absolute;
-      top: 0;
+      top: 0rem;
       left: 0;
-      @include until($tablet-landscape) {
-        margin-left: -0.9rem;
-        top: 1rem;
-        left: 50%;
-      }
+      margin-left: -0.9rem;
+      left: 50%;
     }
     &.address {
-      @include until($tablet-landscape) {
-        padding: 3.2rem 0 0 0;
-      }
       &:before {
         @include icon("map", $sunglow);
       }
     }
 
     &.ping {
-      @include until($tablet-landscape) {
-        padding: 3.2rem 0 0 0;
-      }
       &:before {
         @include icon("ping", $sunglow);
-        top: 1.6rem;
-        @include until($tablet-landscape) {
-          top: 1rem;
-        }
       }
     }
 
