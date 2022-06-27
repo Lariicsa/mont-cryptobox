@@ -46,8 +46,10 @@
     font-weight: $bold;
     font-size: $regular-title-size;
     line-height: $regular-title-size;
-    font-size: 6vw;
-    line-height: 7vw;
+    @include until($tablet-landscape) {
+      font-size: 6vw;
+      line-height: 7vw;
+    }
   }
 
   &__subtitle {
@@ -55,8 +57,11 @@
     font-weight: $semibold;
     font-size: $small-title-size;
     line-height: $small-title-size + 2;
-    font-size: 4vw;
-    line-height: 5vw;
+
+    @include until($tablet-landscape) {
+      font-size: 4vw;
+      line-height: 5vw;
+    }
   }
 
   &__branches {
