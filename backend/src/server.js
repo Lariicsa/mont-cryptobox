@@ -25,7 +25,7 @@ app.options("*", cors());
 app.use(allowCrossDomain);
 
 // Static Files
-const path = __dirname + '/src/views/';
+const path = __dirname + '/views/';
 app.use(express.static(path));
 
 app.get('/', (req, res, next) => {
