@@ -102,7 +102,7 @@
     padding: 0 1.6rem;
     margin: 1.6rem auto;
     position: relative;
-    width: calc(100% - 12rem);
+    width: calc(100% - 6.8rem);
     height: 5.6rem;
     @include until($tablet-landscape) {
       display: none;
@@ -145,7 +145,6 @@
 
   &__info {
     color: $black;
-    padding-top: 2.8rem;
     width: auto;
     height: auto;
     position: relative;
@@ -169,17 +168,21 @@
       background-size: contain;
       position: absolute;
       top: 0rem;
-      left: 0;
       margin-left: -0.9rem;
       left: 50%;
     }
     &.address {
+      padding-top: 2.8rem;
       &:before {
         @include icon("map", $sunglow);
       }
     }
 
     &.ping {
+      padding-top: 2.8rem;
+      @include until($tablet-landscape) {
+        margin-bottom: 1.6rem;
+      }
       &:before {
         @include icon("ping", $sunglow);
       }
