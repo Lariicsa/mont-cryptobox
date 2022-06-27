@@ -11,7 +11,7 @@
         <Cardlist
           :altcoins="btcWsSellBuy"
           :isRelative="true"
-          top="-2rem"
+          top="-16%"
           right="0"
         />
       </div>
