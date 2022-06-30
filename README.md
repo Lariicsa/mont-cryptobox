@@ -1,19 +1,12 @@
-# enepeme
+# Cryptobox Landing
 
-## Project setup
-```
-npm install
-```
+Proyecto para la landing page de Cryptobox, donde se incluye el front hecho en Vue 2 y el backend en Express.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+El backend tiene un endpoint donde maneja conexiones websockets y manda actualizaciones de los precios del BTC y otros mercado en el Bitso Ticker. 
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### Pasos para instalar 
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+En la terminal dentro de la raíz del proyecto ejecutar los siguientes comandos: 
+1. `make build_front`
+1. `make copy_front`
+1. `make run_server`
