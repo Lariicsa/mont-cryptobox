@@ -15,6 +15,13 @@
           right="0"
         />
       </div>
+
+      <div id="bitcoin" class="row globalmargin">
+        <Commoncontent :image="content1.image" :text="content1.text">
+          <Datitle :span="content1.span" :title="content1.title" />
+        </Commoncontent>
+      </div>
+
       <div class="row globalmargin extratop">
         <div class="grid__container cols4">
           <Icontext
@@ -25,11 +32,6 @@
             :key="item.title"
           />
         </div>
-      </div>
-      <div id="bitcoin" class="row globalmargin">
-        <Commoncontent :image="content1.image" :text="content1.text">
-          <Datitle :span="content1.span" :title="content1.title" />
-        </Commoncontent>
       </div>
 
       <div id="cajeros" class="row right globalmargin extratop">
@@ -120,6 +122,7 @@ export default {
       selectedBranch: "delvalle",
       priceBuy: 0,
       priceSell: 0,
+      btcSpot: 0,
     };
   },
 
@@ -135,6 +138,7 @@ export default {
         this.btcData = PARSED.btc_mxn;
         this.priceBuy = PARSED.btc_mxn.buyAt;
         this.priceSell = PARSED.btc_mxn.sellAt;
+        this.btcSpot = PARSED.btc_mxn.spot;
       };
     };
   },
@@ -195,7 +199,7 @@ export default {
     },
 
     btcWSpricer() {
-      let WS_DATA = this.btcPrice;
+      let WS_DATA = this.btcSpot;
       const DATA = {
         altcoin: "Bitcoin",
         price: WS_DATA,
