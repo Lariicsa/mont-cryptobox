@@ -72,7 +72,7 @@
           </template>
         </Maps>
       </div>
-      <div class="row between globalmargin">
+      <div id="contacto" class="row between globalmargin">
         <Form
           buttonText="Enviar"
           formTitle="Mantente informado"
