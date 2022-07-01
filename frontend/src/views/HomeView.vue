@@ -48,7 +48,7 @@
           />
         </div>
       </div>
-
+      
       <div id="cajeros" class="row right globalmargin extratop">
         <Maps
           :mapData="currentBranch"
@@ -72,6 +72,7 @@
           </template>
         </Maps>
       </div>
+
       <div id="contacto" class="row between globalmargin">
         <Form
           :buttonText="formdata.textButton"
@@ -87,6 +88,7 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from "vuex";
 import CardlistAction from "@/components/CardlistAction";
 import Cardlist from "@/components/CardList";
 import Commoncontent from "@/components/CommonContent";
@@ -138,27 +140,11 @@ export default {
       socket: null,
       btcData: null,
       selectedBranch: "delvalle",
-      priceBuy: 0,
-      priceSell: 0,
-      btcSpot: 0,
     };
   },
 
   created() {
-    const BTC_DATA = { action: "SUBSCRIBE", market: "btc_mxn" };
-    this.socket = new WebSocket("ws://localhost:9001/ws");
-    this.socket.onopen = () => {
-      this.status = "connected";
-      this.socket.send(JSON.stringify(BTC_DATA));
-      this.socket.onmessage = (event) => {
-        console.log(event.data);
-        let PARSED = JSON.parse(event.data);
-        this.btcData = PARSED.btc_mxn;
-        this.priceBuy = PARSED.btc_mxn.buyAt;
-        this.priceSell = PARSED.btc_mxn.sellAt;
-        this.btcSpot = PARSED.btc_mxn.spot;
-      };
-    };
+    this.getBitcoinData()
   },
 
   mounted() {
@@ -167,6 +153,7 @@ export default {
   },
 
   methods: {
+    ...mapActions(["getBitcoinData"]),
     getBranchData(data) {
       this.currentBranch = data;
     },
@@ -197,6 +184,7 @@ export default {
   },
 
   computed: {
+    ...mapGetters(["bitcoinPriceBuy", "bitcoinPriceSell", "bitcoinSpot"]),
     branchesListFormatted() {
       let branches = this.branchesData.map((ele) => {
         return { ...ele, value: ele.slug, text: ele.branchname };
@@ -205,8 +193,8 @@ export default {
     },
 
     btcWsSellBuy() {
-      let WS_BUY = this.priceBuy;
-      let WS_SELL = this.priceSell;
+      const WS_BUY = this.bitcoinPriceBuy;
+      const WS_SELL = this.bitcoinPriceSell;
       const DATA = {
         altcoin: "Bitcoin",
         slug: "btc",
@@ -217,7 +205,7 @@ export default {
     },
 
     btcWSpricer() {
-      let WS_DATA = this.btcSpot;
+      const WS_DATA = this.bitcoinSpot;
       const DATA = {
         altcoin: "Bitcoin",
         price: WS_DATA,
