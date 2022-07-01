@@ -113,12 +113,6 @@
     font-size: $small-size;
     line-height: $medium-size + 0.2;
     text-align: center;
-    &.hideIndesktop {
-      display: none;
-      @include until($tablet-landscape) {
-        display: grid;
-      }
-    }
   }
 
   &__head {
@@ -129,10 +123,26 @@
     @include until($tablet-landscape) {
       color: $sunglow;
     }
-    &.hideIndesktop {
-      @include until($tablet-landscape) {
-        margin-top: 1.6rem;
-      }
+  }
+
+  &__topmobile {
+    display: none;
+    grid-template-columns: 32% 32% 32%;
+    justify-content: center;
+    align-items: center;
+    grid-column-gap: 0.8rem;
+    grid-row-gap: 0;
+    padding: 0;
+    margin: 2.4rem auto;
+    position: relative;
+    width: 100%;
+
+    @include until($tablet-landscape) {
+      display: grid;
+    }
+
+    @include mobile {
+      grid-template-columns: 80%;
     }
   }
 
@@ -141,17 +151,14 @@
     width: auto;
     height: auto;
     position: relative;
-    &.hideIndesktop {
-      &:before {
-        display: none;
-      }
-      @include until($tablet-landscape) {
-        padding-top: 0;
-      }
-    }
 
     @include until($tablet-landscape) {
+      margin-top: 0.8rem;
       color: $white-neutral;
+    }
+
+    @include mobile{
+      margin-bottom: 2.4rem;
     }
 
     &:before {
