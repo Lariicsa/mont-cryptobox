@@ -2,7 +2,9 @@
   position: relative;
   margin: 1.2rem 0;
   width: 100%;
-  & > input {
+
+  &__inner {
+    display: flex;
     background-color: transparent;
     border: 0.1rem solid $white-neutral;
     border-radius: $small-title-size;
@@ -14,6 +16,20 @@
     width: 100%;
     height: 5.6rem;
     position: relative;
+  }
+
+  &__input {
+    background-color: transparent;
+    border: none;
+    border-radius: $small-title-size;
+    padding: 0;
+    font-size: $regular-size;
+    color: $white-neutral;
+    font-weight: $regular;
+    text-indent: 2.4rem;
+    width: calc(100% - 7.2rem);
+    height: 100%;
+    position: relative;
 
     &::placeholder,
     .pholder {
@@ -23,11 +39,53 @@
     }
     &:focus,
     &:focus-visible {
-      border: 0.1rem solid $accent;
+      //border: 0.1rem solid $accent;
+      border: none;
       font-weight: $regular;
       outline-color: -webkit-focus-ring-color;
       outline-style: none;
       outline-width: 0;
+    }
+  }
+
+  &__icon {
+    border-top-right-radius: $small-title-size;
+    border-bottom-right-radius: $small-title-size;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 7rem;
+    height: 100%;
+    position: relative;
+    &:after {
+      content: "";
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 2.4rem;
+      width: 2.4rem;
+    }
+
+    &.user {
+      &:after {
+        @include icon("user", $neutral-grey-silver);
+        background-size: contain;
+      }
+    }
+    &.company {
+      &:after {
+        @include icon("briefcase", $neutral-grey-silver);
+      }
+    }
+    &.phone {
+      &:after {
+        @include icon("phone", $neutral-grey-silver);
+      }
+    }
+    &.email {
+      &:after {
+        @include icon("envelope", $neutral-grey-silver);
+      }
     }
   }
 
@@ -51,8 +109,8 @@
       background-color: transparent;
       padding: 0.8rem;
       font-size: $small-size;
-      color: $white-neutral;
-      transform: scale(1) translateX(-2rem) translateY(-4.4rem);
+      color: $neutral-silver;
+      transform: scale(1) translateX(-2rem) translateY(-4.8rem);
     }
   }
 

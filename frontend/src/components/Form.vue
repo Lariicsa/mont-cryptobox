@@ -13,21 +13,47 @@
           <p class="cryptoform__text">{{ textHelp }}</p>
         </div>
         <Inputfield
-          phName="Nombre:"
+          phName="Nombre completo:"
           name="nombre"
           type="text"
           v-model="userAddress.nombre"
           typemsg="error"
+          iconname="user"
         >
         </Inputfield>
+
+        <Inputfield
+          phName="Empresa:"
+          type="text"
+          name="company"
+          v-model="userAddress.company"
+          typemsg="error"
+          iconname="company"
+        />
+        <Inputfield
+          phName="Teléfono:"
+          type="number"
+          name="phone"
+          v-model="userAddress.phone"
+          typemsg="error"
+          iconname="phone"
+        />
+        <Inputfield
+          phName="e-Mail:"
+          type="email"
+          name="email"
+          v-model="userAddress.email"
+          typemsg="error"
+          iconname="email"
+        />
 
         <div class="row between xcenter">
           <div class="row md">
             <Inputfield
-              phName="e-Mail:"
-              type="email"
-              name="email"
-              v-model="userAddress.email"
+              phName="Asunto:"
+              type="text"
+              name="subject"
+              v-model="userAddress.subject"
               typemsg="error"
             />
           </div>
@@ -63,7 +89,9 @@ export default {
     return {
       userAddress: {
         nombre: "",
+        company: "",
         email: "",
+        phone: "",
       },
     };
   },
