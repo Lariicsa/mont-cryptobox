@@ -142,7 +142,7 @@ h3 {
     margin: 4rem 0;
     &.extratop {
       @include from($tablet-landscape) {
-        margin: 16rem 0;
+        margin-top: 16rem;
       }
     }
   }

@@ -74,10 +74,11 @@
       </div>
       <div id="contacto" class="row between globalmargin">
         <Form
-          buttonText="Enviar"
-          formTitle="Mantente informado"
-          textHelp="Leo mauris viverra sapien, dictumst nunc egestas morbi magna. Integer ligula tellus fermentum nec.
-Volutpat velit turpis euismod. Mi blandit egestas netus nisl facilisis diam, turpis leo. Habitant turpis orci habitant."
+          :buttonText="formdata.textButton"
+          :formTitle="formdata.formTitle"
+          :formText="formdata.formText"
+          :formsubTitle="formdata.formSubtitle"
+          :textHelp="formdata.formHelptext"
         />
       </div>
       <Footer :items="footerItems" :social="footerSocial" />
@@ -133,6 +134,7 @@ export default {
       title2: DATA.static02,
       title3: DATA.static03,
       listAlcoins: DATA.listCryptos,
+      formdata: DATA.formData,
       socket: null,
       btcData: null,
       selectedBranch: "delvalle",

@@ -199,7 +199,7 @@ export default {
   static01: {
     image: "crypto_img2.png",
     span: "btc",
-    title: "¿Aún no sabes qué es bitcoin?",
+    title: "¿Aún no sabes qforué es bitcoin?",
     text: `Bitcoin es una criptomoneda, es decir un tipo de dinero descentralizado basado en un sistema criptográfico de transacciones irreversibles.
     Estas características hacen que las transacciones en bitcoins sean anónimas y seguras, además de no depender de una entidad central sino de la propia comunidad, lo cuál ha generado un mercado atractivo de diversificación monetaria confiable en Internet.`,
   },
@@ -213,5 +213,15 @@ export default {
     title: "Moneda digital descentralizada",
     text: `Leo mauris viverra sapien, dictumst nunc egestas morbi magna. Integer ligula tellus fermentum nec.
     Volutpat velit turpis euismod. Mi blandit egestas netus nisl facilisis diam, turpis leo. Habitant turpis orci habitant.`,
+  },
+
+  formData: {
+    formTitle: "¿Interesado en un cajero de criptomonedas?",
+    formText:
+      "¿Quieres conocer el funcionamiento de nuestro sistema de cajeros? Ponte en contacto con nosotros para resolver todas tus dudas con nuestros cajeros.",
+    textButton: "Enviar",
+    formSubtitle: "Contáctanos",
+    formHelptext:
+      "Completa este formulario para dar el siguiente paso en el mundo de la moneda digtal descentralizada con mayor valor.",
   },
 };

@@ -1,19 +1,16 @@
 <template>
   <div class="cryptoform__wrapper">
     <div class="cryptoform__info">
-      <h2 class="cryptoform__title">Moneda digital descentralizada</h2>
+      <h2 class="cryptoform__title">{{ formTitle }}</h2>
       <p class="cryptoform__text">
-        Leo mauris viverra sapien, dictumst nunc egestas morbi magna. Integer
-        ligula tellus fermentum nec. Volutpat velit turpis euismod. Mi blandit
-        egestas netus nisl facilisis diam, turpis leo. Habitant turpis orci
-        habitant.
+        {{ formText }}
       </p>
     </div>
     <transition name="formData">
       <form @submit.prevent="updateAddress(userAddress)" class="cryptoform">
         <div class="row">
-          <h3>{{ formTitle }}</h3>
-          <p>{{ textHelp }}</p>
+          <h3>{{ formsubTitle }}</h3>
+          <p class="cryptoform__text">{{ textHelp }}</p>
         </div>
         <Inputfield
           phName="Nombre:"
@@ -48,7 +45,15 @@
 import Inputfield from "@/components/InputField";
 export default {
   name: "cryptoForm",
-  props: ["isShown", "buttonText", "formTitle", "textHelp", "showPhone"],
+  props: [
+    "isShown",
+    "formText",
+    "buttonText",
+    "formTitle",
+    "formsubTitle",
+    "textHelp",
+    "showPhone",
+  ],
 
   components: {
     Inputfield,
