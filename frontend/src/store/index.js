@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import { BASE_PROD_URL, BASE_DEV_URL } from "../API/index.js";
 
 Vue.use(Vuex);
 
@@ -12,7 +13,6 @@ export default new Vuex.Store({
 
   mutations: {
     SET_BTC_DATA: (state, payload) => {
-      console.log(payload);
       (state.btcPriceBuy = payload.buyAt),
         (state.btcPriceSell = payload.sellAt),
         (state.btcSpot = payload.spot);
@@ -22,7 +22,12 @@ export default new Vuex.Store({
     async getBitcoinData({ commit }, btcData) {
       try {
         const BTC_DATA = { action: "SUBSCRIBE", market: "btc_mxn" };
-        this.socket = new WebSocket("ws://localhost:9001/ws");
+        if (process.env.NODE_ENV === "development") {
+          this.socket = new WebSocket(BASE_DEV_URL);
+        } else {
+          this.socket = new WebSocket(BASE_PROD_URL);
+        }
+
         this.socket.onopen = () => {
           this.status = "connected";
           this.socket.send(JSON.stringify(BTC_DATA));

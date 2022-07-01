@@ -1,17 +1,12 @@
-import axios from "axios";
-const API_URL = "http://api.bitso.com/v3/ticker/?book=btc_mxn";
+//import axios from "axios";
+import BASE_URLS from "../../config.js";
+
+ const BASE_PROD_URL = BASE_URLS.urls.PROD_URL;
+ const BASE_DEV_URL = BASE_URLS.urls.LOCAL_URL;
 
 const CONFIG = {
   "content-Type": "application/json",
   "Access-Control-Allow-Origin": "*",
 };
 
-const API_SERVICE = axios.create({
-  baseURL: API_URL,
-  timeout: 1000,
-  headers: CONFIG,
-});
-
-const getAltcoinPrice = () => API_SERVICE.get();
-
-export { getAltcoinPrice };
+export { BASE_PROD_URL,  BASE_DEV_URL };
