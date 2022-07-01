@@ -4,7 +4,17 @@
       :itemsList="topMenuList"
       :priceData="btcWSpricer"
       :listAlcoins="btcWsSellBuy"
-    />
+    >
+      <template v-slot:nav-cardlist>
+        <Cardlist
+          :altcoins="btcWsSellBuy"
+          :isRelative="true"
+          top="0"
+          right="0"
+          ui="simple"
+        />
+      </template>
+    </Header>
     <div class="container__inner">
       <div class="row globalmargin">
         <HeroImage :title="heroImageData.title" :text="heroImageData.text" />

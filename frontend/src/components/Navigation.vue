@@ -30,6 +30,7 @@
           @onClick="clickPrice"
         />
       </ul>
+      <slot></slot>
     </div>
   </nav>
 </template>

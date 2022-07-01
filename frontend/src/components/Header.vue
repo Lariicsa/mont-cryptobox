@@ -9,7 +9,9 @@
       :itemsList="itemsList"
       :priceData="priceData"
       @itemClick="navItemClick"
-    />
+    >
+     <slot name="nav-cardlist"></slot>
+    </Navigation>
     <div class="header__navigation">
       <Navigation
         :itemsList="itemsList"

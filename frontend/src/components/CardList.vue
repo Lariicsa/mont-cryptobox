@@ -1,12 +1,14 @@
 <template>
   <div
-    :class="isRelative ? 'cardlist__wrapper full' : 'cardlist__wrapper'"
+    :class="
+      isRelative ? `cardlist__wrapper full ${ui}` : `cardlist__wrapper ${ui}`
+    "
     @mouseleave="onMouseLeave"
     :style="`position:${
       isRelative ? 'relative' : 'absolute'
     }; top:${top}; right:${right}`"
   >
-    <div class="cardlist" v-for="coin in altcoins" :key="coin.slug">
+    <div :class="`cardlist ${ui}`" v-for="coin in altcoins" :key="coin.slug">
       <div class="cardlist__name">{{ coin.slug }}</div>
       <div class="cardlist__values">
         <div class="cardlist__price">{{ coin.priceBuy }}</div>
@@ -34,6 +36,10 @@ export default {
     right: {
       type: String,
       default: "0",
+    },
+    ui: {
+      type: String,
+      default: "",
     },
   },
 

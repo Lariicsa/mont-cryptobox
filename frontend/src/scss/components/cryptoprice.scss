@@ -38,14 +38,16 @@
     }
 
     &:after {
-      content: "";
-      width: 0;
-      height: 0;
-      border-left: 0.8rem solid transparent;
-      border-right: 0.8rem solid transparent;
-      border-top: 0.8rem solid $sunglow;
-      border-radius: $radius;
-      margin-left: 0.8rem;
+      @include from($tablet-landscape) {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 0.8rem solid transparent;
+        border-right: 0.8rem solid transparent;
+        border-top: 0.8rem solid $sunglow;
+        border-radius: $radius;
+        margin-left: 0.8rem;
+      }
     }
   }
 }
