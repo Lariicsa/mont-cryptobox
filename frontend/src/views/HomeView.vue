@@ -32,9 +32,13 @@
         </Commoncontent>
       </div>
 
-      <div class="row center globalmargin extratop">
-        <Datitle :span="iconsTitle.span" :title="iconsTitle.title" />
-        <div class="grid__container cols4">
+      <div id="bitcoin-en-efectivo" class="row center globalmargin extratop">
+        <Datitle
+          :span="iconsTitle.span"
+          :title="iconsTitle.title"
+          alignment="center"
+        />
+        <div class="grid__container cols4 iconsmargin">
           <Icontext
             v-for="item in icons"
             :title="item.title"

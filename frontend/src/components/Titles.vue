@@ -1,5 +1,5 @@
 <template>
-  <div class="datitle__wrapper">
+  <div class="datitle__wrapper" :class="alignment">
     <span class="datitle__span">{{ span }}</span>
     <h2 class="datitle">{{ title }}</h2>
   </div>
