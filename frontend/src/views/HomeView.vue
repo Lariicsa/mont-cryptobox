@@ -73,7 +73,7 @@
         </Maps>
       </div>
 
-      <div id="contacto" class="row between globalmargin">
+      <!-- <div id="contacto" class="row between globalmargin">
         <Form
           :buttonText="formdata.textButton"
           :formTitle="formdata.formTitle"
@@ -81,7 +81,7 @@
           :formsubTitle="formdata.formSubtitle"
           :textHelp="formdata.formHelptext"
         />
-      </div>
+      </div> -->
       <Footer :items="footerItems" :social="footerSocial" />
     </div>
   </div>
