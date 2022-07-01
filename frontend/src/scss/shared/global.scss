@@ -52,6 +52,8 @@ h3 {
   @include until($tablet-landscape) {
     font-size: $medium-size + $radius;
     line-height: $medium-size + 0.4rem;
+    margin: 0 auto;
+    text-align: center;
   }
 }
 

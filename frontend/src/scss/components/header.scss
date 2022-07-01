@@ -31,7 +31,7 @@
     @include icon("burger", $white-neutral);
     width: 4rem;
     height: 4rem;
-    @include mobile {
+    @include until($tablet-landscape) {
       display: flex;
     }
   }
@@ -39,7 +39,7 @@
     display: flex;
     position: relative;
     z-index: 4;
-    @include mobile {
+    @include until($tablet-landscape) {
       display: none;
     }
   }

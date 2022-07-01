@@ -46,6 +46,19 @@
     width: 100%;
     height: 5.6rem;
     position: relative;
+    &:hover {
+      @include from($tablet-landscape) {
+        background-color: rgba($sunglow, 0.8);
+        cursor: pointer;
+      }
+    }
+    &:active {
+      @include from($tablet-landscape) {
+        background-color: rgba($sunglow, 1);
+        color: $accent;
+        cursor: pointer;
+      }
+    }
   }
 
   &__text {
