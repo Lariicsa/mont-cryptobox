@@ -32,7 +32,8 @@
         </Commoncontent>
       </div>
 
-      <div class="row globalmargin extratop">
+      <div class="row center globalmargin extratop">
+        <Datitle :span="iconsTitle.span" :title="iconsTitle.title" />
         <div class="grid__container cols4">
           <Icontext
             v-for="item in icons"
@@ -118,6 +119,7 @@ export default {
       topMenuList: DATA.topNavigation,
       heroImageData: DATA.heroImage,
       icons: DATA.iconText,
+      iconsTitle: DATA.iconsTitle,
       footerItems: DATA.footer.items,
       footerSocial: DATA.footer.social,
       mapsData: DATA.branches[0],

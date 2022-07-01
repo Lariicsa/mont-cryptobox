@@ -57,6 +57,11 @@ export default {
     },
   ],
 
+  iconsTitle: {
+    span: "Tu bitcoin en efectivo",
+    title: `¿Cómo funcionan los cajeros?`,
+  },
+
   footer: {
     items: [
       {
@@ -209,4 +214,5 @@ export default {
     text: `Leo mauris viverra sapien, dictumst nunc egestas morbi magna. Integer ligula tellus fermentum nec.
     Volutpat velit turpis euismod. Mi blandit egestas netus nisl facilisis diam, turpis leo. Habitant turpis orci habitant.`,
   },
+ 
 };
