@@ -22,16 +22,29 @@
   }
 
   &__icon {
-    @include icon("upload", $accent);
     background-color: $white-neutral;
     background-position: center;
-    background-size: 80%;
     border-radius: 100%;
+    background-size: 56%;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 6rem;
     height: 6rem;
+
+    &.step-1{
+      @include icon("step-1", $accent);
+      
+    }
+    &.step-2{
+      @include icon("step-2", $accent);
+    }
+    &.step-3{
+      @include icon("step-3", $accent);
+    }
+    &.step-4{
+      @include icon("step-4", $accent);
+    }
   }
 
   &__title {

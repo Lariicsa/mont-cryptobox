@@ -36,24 +36,24 @@ export default {
   ],
   iconText: [
     {
-      title: "Ingresa",
-      text: "Egestas sagittis ipsum habitant at diam.",
-      icon: "upload",
+      title: "Elige",
+      text: "Elige entre retirar tus Bitcoins a pesos y comprar Bitcoins con dinero físico.",
+      icon: "step-1",
     },
     {
-      title: "Ingresa2",
-      text: "Egestas sagittis ipsum habitant at diam.",
-      icon: "upload",
+      title: "Escanea",
+      text: "Utiliza el escáner QR de tu teléfono para realizar transacciones con los cajeros y tu wallet.",
+      icon: "step-2",
     },
     {
-      title: "Ingresa3",
-      text: "Egestas sagittis ipsum habitant at diam.",
-      icon: "upload",
+      title: "Envía",
+      text: "Selecciona, controla y administra la cantidad que quieres retirar y/o recibir a través del cajero.",
+      icon: "step-3",
     },
     {
-      title: "Ingresa4",
-      text: "Egestas sagittis ipsum habitant at diam.",
-      icon: "upload",
+      title: "Retira",
+      text: "Retira Bitcoin a pesos de acuerdo al tipo de cambio sin recurrir a intermediarios.",
+      icon: "step-4",
     },
   ],
 
@@ -214,5 +214,4 @@ export default {
     text: `Leo mauris viverra sapien, dictumst nunc egestas morbi magna. Integer ligula tellus fermentum nec.
     Volutpat velit turpis euismod. Mi blandit egestas netus nisl facilisis diam, turpis leo. Habitant turpis orci habitant.`,
   },
- 
 };
