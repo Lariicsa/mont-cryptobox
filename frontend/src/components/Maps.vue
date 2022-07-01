@@ -8,12 +8,12 @@
       <slot name="drop-slot"></slot>
     </div>
     <div class="maps__top">
-      <div class="maps__info address">{{ mapData.address }}</div>
+      <div class="maps__info address" v-html="mapData.address" />
       <div class="maps__info ping" v-html="mapData.horaries"></div>
       <div class="maps__topmobile">
         <div class="maps__head">
           Fecha de instalación
-          <span class="maps__info">{{ mapData.installation }}</span>
+          <span class="maps__info" v-html="mapData.installation" />
         </div>
 
         <div class="maps__head">
