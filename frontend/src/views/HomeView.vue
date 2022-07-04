@@ -150,6 +150,7 @@ export default {
   mounted() {
     this.setBranchData;
     this.branchesList;
+    console.log(window.location);
   },
 
   methods: {
